@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal Scan</title>
+    <link rel="stylesheet" href="scss/_normalize.scss">
 </head>
 
 <body>
@@ -496,7 +497,7 @@
                         <option selected>-- Seleccione una opción --</option>
                         <option>Forma redondeada</option>
                         <option>Forma irregular</option>
-                    </select>, 
+                    </select>,
                     <select>
                         <option selected>-- Seleccione una opción --</option>
                         <option>de apariencia homogénea</option>
@@ -507,22 +508,75 @@
 
             <article>
                 <h4>Ovario Derecho</h4>
-                <p>XXXX, XXX, XXX, XXX. Dimensiones: INPUT CM</p>
+                <p>XXXX,
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>Forma redondeada</option>
+                        <option>Forma irregular</option>
+                    </select>,
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>de apariencia homogénea</option>
+                        <option>de apariencia heterogénea</option>
+                    </select>, XXX. Dimensiones: <input type="number"> cm
+                </p>
             </article>
 
             <article>
                 <h4>Próstata</h4>
-                <p>Órgano en posición anatómica normal, XXXX, de XXX, de XXX, de XXX. XXX. Dimensiones: INPUT CM.</p>
+                <p>Órgano en posición anatómica normal,
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>bordes regulares</option>
+                        <option>bordes irregulares</option>
+                    </select>, de
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>forma fusiforme</option>
+                        <option>forma redondeada y bilobulada</option>
+                    </select>, de
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>ecotextura homogénea</option>
+                        <option>ecotextura heterogénea </option>
+                    </select>, de XXX. XXX. Dimensiones: <input type="number"> cm.
+                </p>
             </article>
 
             <article>
                 <h4>Testiculo Derecho</h4>
-                <p>XXXX, XXX de XXX, XXX. Dimensiones: INPUT CM.</p>
+                <p>XXXX,
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>forma redondeada</option>
+                        <option>forma irregular</option>
+                    </select> de 
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>apariencia homogénea hipoecogénica</option>
+                        <option>apariencia homogénea hiperecogénica</option>
+                        <option>apariencia heterogénea hiperecogénica</option>
+                        <option>apariencia heterogénea hipoecogénica</option>
+                    </select>, XXX. Dimensiones: <input type="number"> cm.
+                </p>
             </article>
 
             <article>
                 <h4>Testiculo Izquierdo</h4>
-                <p>XXXX, XXX de XXX, XXX. Dimensiones: INPUT CM.</p>
+                <p>XXXX,
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>forma redondeada</option>
+                        <option>forma irregular</option>
+                    </select> de 
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>apariencia homogénea hipoecogénica</option>
+                        <option>apariencia homogénea hiperecogénica</option>
+                        <option>apariencia heterogénea hiperecogénica</option>
+                        <option>apariencia heterogénea hipoecogénica</option>
+                    </select>, XXX. Dimensiones: <input type="number"> cm.
+                </p>
             </article>
         </div>
 
@@ -531,14 +585,42 @@
 
             <article>
                 <h4>Glándula Adrenal Izquierda</h4>
-                <p>Órgano en posición anatómica normal, XXX, XXX, XXX, XXXX. Dimensiones: Largo: INPUT CM; polo caudal:
-                    INPUT CM; polo craneal: INPUT CM. </p>
+                <p>Órgano en posición anatómica normal, 
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>forma conservada</option>
+                        <option>forma irregular</option>
+                    </select>, 
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>márgenes definido</option>
+                        <option>márgenes irregulares</option>
+                    </select>, XXX, 
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>buena diferenciación corticomedular </option>
+                        <option>pérdida de diferenciación corticomedular</option>
+                    </select>. Dimensiones: Largo: <input type="number"> cm; polo caudal: <input type="number"> cm; polo craneal: <input type="number"> cm. </p>
             </article>
 
             <article>
                 <h4>Glándula Adrenal Derecha</h4>
-                <p>Órgano en posición anatómica normal, XXX, XXX, XXX, XXXX. Dimensiones: Largo: INPUT CM; polo caudal:
-                    INPUT CM; polo craneal: INPUT CM. </p>
+                <p>Órgano en posición anatómica normal, 
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>forma conservada</option>
+                        <option>forma irregular</option>
+                    </select>, 
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>márgenes definido</option>
+                        <option>márgenes irregulares</option>
+                    </select>, XXX, 
+                    <select>
+                        <option selected>-- Seleccione una opción --</option>
+                        <option>buena diferenciación corticomedular </option>
+                        <option>pérdida de diferenciación corticomedular</option>
+                    </select>. Dimensiones: Largo: <input type="number"> cm; polo caudal: <input type="number"> cm; polo craneal: <input type="number"> cm. </p>
             </article>
         </div>
 
@@ -546,19 +628,28 @@
             <h3>Vascular</h3>
             <article>
                 <h4>Aorta</h4>
-                <p>Diámetro de INPUT CM</p>
+                <p>Diámetro de <input type="number"> cm</p>
             </article>
         </div>
 
         <div>
-            <h3>Vascular</h3>
-            <article>
-                <h4>Aorta</h4>
-                <p>Diámetro de INPUT CM</p>
-            </article>
+            <h3>Otros</h3>
+            <textarea></textarea>
+
+            <h3>Diagnósticos Diferenciales</h3>
+            <textarea></textarea>
+
+            <h3>Recomendaciones</h3>
+            <textarea></textarea>
         </div>
     </section>
 
+    <div>
+        <h4>Realizó</h4>
+        <p>Alexis Gonzales</p>
+        <p>Médico Veterinario UNAL</p>
+        <p>TP 47440</p>
+    </div>
 
 </body>
 
