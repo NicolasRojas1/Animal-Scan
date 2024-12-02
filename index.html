@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="contenedor">
     <header>
         <h1>Animal Scan</h1>
     </header>
@@ -46,6 +46,9 @@
             <label for="sexo">Sexo:</label>
             <input type="text" placeholder="Ingrese el sexo" id="sexo">
 
+            <label for="peso">Peso:</label>
+            <input type="text" placeholder="Ingrese el peso" id="peso">
+
             <label for="propietario">Propietario:</label>
             <input type="text" placeholder="Ingrese el nombre del propietario" id="propietario">
         </fieldset>
@@ -59,38 +62,44 @@
                 <h4>Vejiga</h4>
                 <p>Posición anatómica conservada, órgano sacular, con pared trilaminar de superficie
                     <select>
-                        <option selected>-- Seleccione una opción --</option>
-                        <option>irregular</option>
+                        <option selected>irregular</option>
                         <option>regular</option>
                     </select>
                     de grosor <input type="number"> cm, grosor
                     <select>
-                        <option selected>-- Seleccione una opción --</option>
-                        <option>normal</option>
+                        <option selected>normal</option>
                         <option>engrosado</option>
-                        </option>
                     </select> para el grado de distensión, presenta
                     cantidad
                     <select>
-                        <option selected>-- Seleccione una opción --</option>
-                        <option>leve</option>
+                        <option selected>leve</option>
                         <option>moderada</option>
                         <option>severa</option>
-                        </option>
                     </select> de contenido anecogénico en su luz,
                     <select>
-                        <option selected>-- Seleccione una opción --</option>
-                        <option>sin presencia de sedimento o urolitos en su luz</option>
-                        <option>con presencia leve--moderada--severa</option>
-                        </option>
+                        <option selected>sin presencia de sedimento u urolitos en su luz</option>
+                        <option>con presencia leve de material hiperecogénico sedimentado</option>
+                        <option>con presencia moderada de material hiperecogénico sedimentado</option>
+                        <option>con presencia severa  de material hiperecogénico sedimentado</option>
+                        <option>con presencia leve de material hiperecogénico particulado en flotación</option>
+                        <option>con presencia moderada de material hiperecogénico particulado en flotación</option>
+                        <option>con presencia severa de material hiperecogénico particulado en flotación</option>
+                        <option>con presencia leve de material ecogénico particulado en flotación</option>
+                        <option>con presencia moderada de material ecogénico particulado en flotación</option>
+                        <option>con presencia severa de material ecogénico particulado en flotación</option>
+                        <!-- Faltan 2 en las que se debe agregar dimensiones -->
                     </select>.
-                    <select>
-                        <option selected>-- Seleccione una opción --</option>
-                        <option>Sin liquido libre en espacio cistocolico</option>
-                        <option>con presencia leve--moderada--severa</option>
-                        </option>
+                    <!-- Completo -->
+                    <select> 
+                        <option selected>Sin liquido libre en espacio cistocolico</option>
+                        <option>Con presencia leve de material anecogenico en flotación en espacio cistocolico</option>
+                        <option>Con presencia moderada de material anecogenico en flotación en espacio cistocolico</option>
+                        <option>Con presencia severa de material anecogenico en flotación en espacio cistocolico</option>
+                        <option>Con presencia leve de material anecogenico particulado en flotación en espacio cistocolico </option>
+                        <option>Con presencia moderada de material anecogenico particulado en flotación en espacio cistocolico</option>
+                        <option>Con presencia severa de material anecogenico particulado en flotación en espacio cistocolico</option>
                     </select>
-                </p> normal
+                </p>
             </article>
         </div>
 

@@ -25,9 +25,9 @@ body {
 
 /* ------------- Globales ---------------*/
 .contenedor {
-    max-width: 120rem;
+    max-width: 100rem;
     width: 90%;
-    width: min(90%, 120rem); /*Es lo mismo que las 2 lineas de arriba*/
+    width: min(90%, 100rem); /*Es lo mismo que las 2 lineas de arriba*/
     margin: 0 auto;
 }
 
@@ -38,6 +38,10 @@ a {
 h1,h2,h3, h4 {
     font-family: var(--fuenteHeading);
     line-height: 1.2;
+}
+
+h1, h2, h3 {
+    text-align: center;
 }
 
 h1 { font-size: 4.8rem;}
