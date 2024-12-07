@@ -60,7 +60,7 @@
         <div>
             <h3>Urinario</h3>
 
-            <article>
+            <article class="urinario">
                 <h4>Vejiga</h4>
                 <p>Posición anatómica conservada, órgano sacular, con pared trilaminar de superficie
                     <select>
@@ -78,7 +78,7 @@
                         <option>moderada</option>
                         <option>severa</option>
                     </select> de contenido anecogénico en su luz,
-                    <select>
+                    <select id="urinario-select-opciones">
                         <option selected>sin presencia de sedimento u urolitos en su luz</option>
                         <option>con presencia leve de material hiperecogénico sedimentado</option>
                         <option>con presencia moderada de material hiperecogénico sedimentado</option>
@@ -89,9 +89,11 @@
                         <option>con presencia leve de material ecogénico particulado en flotación</option>
                         <option>con presencia moderada de material ecogénico particulado en flotación</option>
                         <option>con presencia severa de material ecogénico particulado en flotación</option>
-                        <!-- SE DEBE AGREGAR 2 OPTION DONDE EXISTA UN INPUT -->
+                        <option value="1" data-input-type="opcion-1">Con presencia</option>
+                        <option value="2" data-input-type="opcion-2">Con presencia</option>
+                    </select>
 
-                    </select>.
+                    <div id="input-dinamico"></div>
 
                     <select>
                         <option selected>Sin liquido libre en espacio cistocolico</option>
@@ -122,12 +124,12 @@
                         <option>normal</option>
                         </option>
                     </select> para la distension,
-                    <select>
+                    <select id="colon-select-opciones">
                         <option selected>buena diferenciación entre capas</option>
                         <option>con pérdida diferenciación entre capas</option>
-                        <!-- SE DEBE AGREGAR OTRO OPTION DONDE EXISTA UN INPUT -->
-
-                    </select>,
+                        <option value="1" data-input-type="opcion-1">con foco con pérdida de diferenciación entre capas </option>
+                    </select>
+                    <div id="input-diferenciacion-pared"></div>
                     <select>
                         <option selected>con interfase hiperecogénico compatible con bolos fecales y gas</option>
                         <option>con cantidad leve de material ecogénico mixto compatible con material fecal blanda o
@@ -159,15 +161,15 @@
                         <option>líquido</option>
                         <option>alimenticio</option>
                     </select> en su luz,
-                    <select>
+                    <select id="yeyuno-select-paredes">
                         <option selected>conservando diferenciacion de capas</option>
                         <option>con pérdida de diferenciación entre capas</option>
                         <option>con presencia de múltiples focos hiperecogénicos en mucosa perdiendo disposición normal
                             de sus capas</option>
                         <option>se observa predominancia marcada de capa muscular en todo el órgano</option>
-                        <!-- SE DEBE AGREGAR OTRO OPTION CON UN INPUT -->
-
-                    </select>.
+                        <option value="1" data-input-type="opcion-1">con foco con pérdida de diferenciación entre capas </option>
+                    </select>
+                    <div id="input-yeyuno-pared"></div>
 
                     <select>
                         <option selected>No se observa corrugamiento de asas</option>
@@ -857,7 +859,7 @@
                         <option>apariencia homogénea hiperecogénica</option>
                         <option>apariencia heterogénea hiperecogénica</option>
                         <option>apariencia heterogénea hipoecogénica</option>
-                    </select>, 
+                    </select>,
                     <select>
                         <option selected>sin lesiones focales o difusas</option>
                         <!-- FALTAN 7 OPTIONS CON SUS INPUTS -->
@@ -886,7 +888,7 @@
                         <option>apariencia homogénea hiperecogénica</option>
                         <option>apariencia heterogénea hiperecogénica</option>
                         <option>apariencia heterogénea hipoecogénica</option>
-                    </select>, 
+                    </select>,
                     <select>
                         <option selected>sin lesiones focales o difusas</option>
                         <!-- FALTAN 7 OPTIONS CON SUS INPUTS -->
@@ -909,10 +911,11 @@
                     <select>
                         <option selected>márgenes definido</option>
                         <option>márgenes irregulares</option>
-                    </select>, 
+                    </select>,
                     <select>
                         <option selected>ecotextura homogénea</option>
-                        <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo craneal</option>
+                        <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo craneal
+                        </option>
                         <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo caudal</option>
                         <!-- FALTAN 2 OPTION CON INPUT -->
 
@@ -935,10 +938,11 @@
                     <select>
                         <option selected>márgenes definido</option>
                         <option>márgenes irregulares</option>
-                    </select>, 
+                    </select>,
                     <select>
                         <option selected>ecotextura homogénea</option>
-                        <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo craneal</option>
+                        <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo craneal
+                        </option>
                         <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo caudal</option>
                         <!-- FALTAN 2 OPTION CON INPUT -->
 
@@ -961,15 +965,16 @@
         </div>
 
         <div>
-            <h3>Otros</h3>
-            <textarea></textarea>
-
             <h3>Diagnósticos Diferenciales</h3>
             <textarea></textarea>
 
             <h3>Recomendaciones</h3>
             <textarea></textarea>
         </div>
+
+        <p>*La ecografía es un método diagnóstico complementario que debe ser evaluado en conjunto con el examen
+            clínico. Las apreciaciones presentes en este reporte son válidas para la ecografía realizada en la fecha
+            estipulada al inicio de este reporte.</p>
     </section>
 
     <div>
@@ -978,6 +983,8 @@
         <p>Médico Veterinario UNAL</p>
         <p>TP 47440</p>
     </div>
+
+    <script src="/app.js"></script>
 
 </body>
 
