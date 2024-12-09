@@ -252,6 +252,15 @@ function agregarEstomagoCuerpo(inputType, inputDinamico) {
     }
 }
 
+function agregarDuodenoPared(inputType, inputDinamico) {
+    if (inputType === "opcion-1") {
+        const inputNumber = document.createElement("input");
+        inputNumber.type = "number";
+        inputDinamico.appendChild(inputNumber);
+        inputDinamico.innerHTML += " cm.";
+    }
+}
+
 
 
 // Inicializar los selects con sus respectivas funciones específicas
@@ -262,4 +271,5 @@ iniciarSelectDinamico("yeyuno-select-accidentes", "input-yeyuno-accidente", agre
 iniciarSelectDinamico("yeyuno-select-dilatacion", "input-yeyuno-dilatacion", agregarYeyunoDilatacion);
 iniciarSelectDinamico("estomago-select-diferenciacion", "input-estomago-diferenciacion", agregarEstomagoDiferenciacion);
 iniciarSelectDinamico("estomago-select-cuerpo", "input-estomago-cuerpo", agregarEstomagoCuerpo);
+iniciarSelectDinamico("duodeno-select-pared", "input-duodeno-pared", agregarDuodenoPared);
 
