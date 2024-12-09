@@ -187,7 +187,6 @@ function agregarYeyunoAccidentes(inputType, inputDinamico) {
 function agregarYeyunoDilatacion(inputType, inputDinamico) {
     const inputNumber = document.createElement("input");
     inputNumber.type = "number";
-    //
 
     switch (inputType) {
 
@@ -261,7 +260,29 @@ function agregarDuodenoPared(inputType, inputDinamico) {
     }
 }
 
+function agregarDuodenoAccidente(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
 
+    switch (inputType) {
+
+        case "opcion-1":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, con pérdida total de diferenciación entre capas y gas en la luz en porción hipogástrica.";
+            break;
+
+        case "opcion-2":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, con pérdida total de diferenciación entre capas y gas en la luz en porción mesogástrica.";
+            break;
+
+        case "opcion-3":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += "  cm, con pérdida total de diferenciación entre capas y gas en la luz en porción epigástrica.";
+            break;
+    }
+
+}
 
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
@@ -272,4 +293,6 @@ iniciarSelectDinamico("yeyuno-select-dilatacion", "input-yeyuno-dilatacion", agr
 iniciarSelectDinamico("estomago-select-diferenciacion", "input-estomago-diferenciacion", agregarEstomagoDiferenciacion);
 iniciarSelectDinamico("estomago-select-cuerpo", "input-estomago-cuerpo", agregarEstomagoCuerpo);
 iniciarSelectDinamico("duodeno-select-pared", "input-duodeno-pared", agregarDuodenoPared);
+iniciarSelectDinamico("duodeno-select-accidentes", "input-duodeno-accidente", agregarDuodenoAccidente);
+
 
