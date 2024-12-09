@@ -229,6 +229,16 @@ function agregarYeyunoDilatacion(inputType, inputDinamico) {
     }
 }
 
+function agregarEstomagoDiferenciacion(inputType, inputDinamico) {
+    if (inputType === "opcion-1") {
+        const inputNumber = document.createElement("input");
+        inputNumber.type = "number";
+        inputDinamico.innerHTML = " y apariencia hipoecogénica, engrosado con espesor de ";
+        inputDinamico.appendChild(inputNumber);
+        inputDinamico.innerHTML += " cm.";
+    }
+}
+
 
 
 // Inicializar los selects con sus respectivas funciones específicas
@@ -237,4 +247,5 @@ iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agr
 iniciarSelectDinamico("yeyuno-select-paredes", "input-yeyuno-pared", agregarYeyunoPared);
 iniciarSelectDinamico("yeyuno-select-accidentes", "input-yeyuno-accidente", agregarYeyunoAccidentes);
 iniciarSelectDinamico("yeyuno-select-dilatacion", "input-yeyuno-dilatacion", agregarYeyunoDilatacion);
+iniciarSelectDinamico("estomago-select-diferenciacion", "input-estomago-diferenciacion", agregarEstomagoDiferenciacion);
 

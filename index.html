@@ -156,7 +156,7 @@
                 <h4>Yeyuno</h4>
                 <p>Contenido
                     <select>
-                        <option selected> -- Seleccione una opcion --</option>
+                        <option selected> -- Seleccione una opcion -- </option>
                         <option>laminar</option>
                         <option>gaseoso</option>
                         <option>líquido</option>
@@ -196,7 +196,7 @@
                         <option>se observa en porción hipogástrica derecha lesión compatible con intususcepción</option>
                         <option>se observa en porción mesogástrica derecha lesión compatible con intususcepción</option>
                         <option>se observa en porción epigástrica derecha lesión compatible con intususcepción</option>
-                        <!-- INPUTS CREADOS -->
+                        <!-- OPTIONS E INPUTS CREADOS -->
                         <option value="1" data-input-type="opcion-1">Se observa estructura redondeada con dimensiones de </option>
                         <option value="2" data-input-type="opcion-2">Se observa estructura redondeada con dimensiones de </option>
                         <option value="3" data-input-type="opcion-3">Se observa estructura redondeada con dimensiones de </option>
@@ -221,15 +221,13 @@
                         <option>se observa dilatación leve en múltiples porciones yeyunales.</option>
                         <option>se observa dilatación moderada en múltiples porciones yeyunales.</option>
                         <option>se observa dilatación severa en múltiples porciones yeyunales.</option>
-                        <!-- FALTAN 6 OPTION CON INPUT EN CADA UNO -->
+                                                <!-- OPTIONS E INPUTS CREADOS -->
                         <option value="1" data-input-type="opcion-1">Se observa estructura con superficie cóncava</option>
                         <option value="2" data-input-type="opcion-2">Se observa estructura con superficie cóncava</option>
                         <option value="3" data-input-type="opcion-3">Se observa estructura con superficie cóncava</option>
                         <option value="4" data-input-type="opcion-4">Se observa estructura con superficie cóncava</option>
                         <option value="5" data-input-type="opcion-5">Se observa estructura con superficie cóncava</option>
                         <option value="6" data-input-type="opcion-6">Se observa estructura con superficie cóncava</option>
-
-
                     </select>
                     <div id="input-yeyuno-dilatacion"></div>
                 </p>
@@ -239,7 +237,8 @@
                 <h4>Estómago</h4>
                 <p>Órgano
                     <select>
-                        <option selected>con cantidad leve de contenido mixto líquido</option>
+                        <option selected> -- Seleccione una opción -- </option>
+                        <option>con cantidad leve de contenido mixto líquido</option>
                         <option>con cantidad moderada de contenido mixto líquido</option>
                         <option>con cantidad severa de contenido mixto líquido</option>
                         <option>con cantidad leve de contenido mixto gaseoso</option>
@@ -249,16 +248,18 @@
                         <option>con cantidad moderada de contenido alimenticio</option>
                         <option>sin contenido dentro de la luz</option>
                     </select> , se observa pared
-                    <select>
-                        <option selected>con buena diferenciación de sus capas</option>
-                        <option>con pérdida de diferenciación de sus capas</option>
-                        <option>con presencia de múltiples focos hiperecogénicos generadores de reverberación en mucosa
-                        </option>
-                        <option>con buena diferenciación de sus capas</option>
-                        <option>con capa hiperecogénica sobre la mucosa</option>
-                        <!-- FALTAN 1 OPTION CON INPUT EN CADA UNO -->
+                    <select id="estomago-select-diferenciacion">
+                        <option selected>con buena diferenciación de sus capas.</option>
+                        <option>con pérdida de diferenciación de sus capas.</option>
+                        <option>con presencia de múltiples focos hiperecogénicos generadores de reverberación en mucosa.</option>
+                        <option>con buena diferenciación de sus capas.</option>
+                        <option>con capa hiperecogénica sobre la mucosa.</option>
+                        <!-- OPTION E INPUT CREADOS -->
+                        <option value="1" data-input-type="opcion-1">con foco con pérdida entre capas</option>
 
-                    </select>. Pared de hasta <input type="number"> cm con pliegues y <input type="number"> cm sin
+                    </select>
+                    <div id="input-estomago-diferenciacion"></div>
+                    Pared de hasta <input type="number"> cm con pliegues y <input type="number"> cm sin
                     pliegues,
                     <select>
                         <option selected>grosor normal para la talla del paciente</option>
