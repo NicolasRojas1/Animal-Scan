@@ -239,6 +239,19 @@ function agregarEstomagoDiferenciacion(inputType, inputDinamico) {
     }
 }
 
+function agregarEstomagoCuerpo(inputType, inputDinamico) {
+    if (inputType === "opcion-1") {
+        const inputNumber = document.createElement("input");
+        inputNumber.type = "number";
+        const inputText = document.createElement("input");
+        inputText.type = "text";
+        inputDinamico.appendChild(inputText);
+        inputDinamico.innerHTML += "con dimensiones de ";
+        inputDinamico.appendChild(inputNumber);
+        inputDinamico.innerHTML += " cm, generadora de sombra acústica fuerte.";
+    }
+}
+
 
 
 // Inicializar los selects con sus respectivas funciones específicas
@@ -248,4 +261,5 @@ iniciarSelectDinamico("yeyuno-select-paredes", "input-yeyuno-pared", agregarYeyu
 iniciarSelectDinamico("yeyuno-select-accidentes", "input-yeyuno-accidente", agregarYeyunoAccidentes);
 iniciarSelectDinamico("yeyuno-select-dilatacion", "input-yeyuno-dilatacion", agregarYeyunoDilatacion);
 iniciarSelectDinamico("estomago-select-diferenciacion", "input-estomago-diferenciacion", agregarEstomagoDiferenciacion);
+iniciarSelectDinamico("estomago-select-cuerpo", "input-estomago-cuerpo", agregarEstomagoCuerpo);
 
