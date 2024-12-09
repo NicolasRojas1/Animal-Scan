@@ -183,6 +183,52 @@ function agregarYeyunoAccidentes(inputType, inputDinamico) {
     }
 }
 
+// Función para yeyuno accidentes
+function agregarYeyunoDilatacion(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
+    //
+
+    switch (inputType) {
+
+        case "opcion-1":
+            inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y dilatación hacia oral  y sin flujo en aboral, con dimensiones de  ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, ubicada en porción hipogástrica izquierda de yeyuno.";
+            break;
+
+        case "opcion-2":
+            inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y dilatación  hacia oral y sin flujo en aboral, con dimensiones de  ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, ubicada en porción mesogástrica izquierda de yeyuno.";
+            break;
+
+        case "opcion-3":
+            inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y  oral y sin flujo en aboral, con dimensiones de";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, ubicada en porción epigástrica izquierda de yeyuno.";
+            break;
+
+        case "opcion-4":
+            inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y dilatación hacia oral y sin flujo en aboral, con dimensiones de  ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, ubicada en porción hipogástrica derecha de yeyuno.";
+            break;
+
+        case "opcion-5":
+            inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y dilatación hacia oral y sin flujo en aboral, con dimensiones de  ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, ubicada en porción mesogástrica derecha de yeyuno.";
+            break;
+
+        case "opcion-6":
+            inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y dilatación  hacia oral y sin flujo en aboral, con dimensiones de  ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, ubicada en porción epigástrica derecha de yeyuno.";
+            break;
+    }
+}
+
 
 
 // Inicializar los selects con sus respectivas funciones específicas
@@ -190,4 +236,5 @@ iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMater
 iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agregarDiferenciacionPared);
 iniciarSelectDinamico("yeyuno-select-paredes", "input-yeyuno-pared", agregarYeyunoPared);
 iniciarSelectDinamico("yeyuno-select-accidentes", "input-yeyuno-accidente", agregarYeyunoAccidentes);
+iniciarSelectDinamico("yeyuno-select-dilatacion", "input-yeyuno-dilatacion", agregarYeyunoDilatacion);
 
