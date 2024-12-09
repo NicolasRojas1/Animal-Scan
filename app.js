@@ -149,10 +149,45 @@ function agregarYeyunoPared(inputType, inputDinamico) {
     }
 }
 
+// Función para yeyuno accidentes
+function agregarYeyunoAccidentes(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
+    inputDinamico.appendChild(inputNumber);
+
+    switch (inputType) {
+
+        case "opcion-1":
+            inputDinamico.innerHTML += " cm conectada a porción yeyunal, con pérdida total de diferenciación entre capas y gas en la luz, ubicada en porción hipogástrica izquierda de yeyuno";
+            break;
+
+        case "opcion-2":
+            inputDinamico.innerHTML += " cm conectada a porción yeyunal, con pérdida total de diferenciación entre capas y gas en la luz, ubicada en porción mesogástrica izquierda de yeyuno";
+            break;
+
+        case "opcion-3":
+            inputDinamico.innerHTML += " cm conectada a porción yeyunal, con pérdida total de diferenciación entre capas y gas en la luz, ubicada en porción epigástrica izquierda de yeyuno";
+            break;
+
+        case "opcion-4":
+            inputDinamico.innerHTML += " cm conectada a porción yeyunal, con pérdida total de diferenciación entre capas y gas en la luz, ubicada en porción hipogástrica derecha de yeyuno";
+            break;
+
+        case "opcion-5":
+            inputDinamico.innerHTML += " cm conectada a porción yeyunal, con pérdida total de diferenciación entre capas y gas en la luz, ubicada en porción mesogástrica derecha de yeyuno";
+            break;
+
+        case "opcion-6":
+            inputDinamico.innerHTML += " cm conectada a porción yeyunal, con pérdida total de diferenciación entre capas y gas en la luz, ubicada en porción epigástrica derecha de yeyuno";
+            break;
+    }
+}
+
 
 
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
 iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agregarDiferenciacionPared);
 iniciarSelectDinamico("yeyuno-select-paredes", "input-yeyuno-pared", agregarYeyunoPared);
+iniciarSelectDinamico("yeyuno-select-accidentes", "input-yeyuno-accidente", agregarYeyunoAccidentes);
 
