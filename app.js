@@ -281,6 +281,44 @@ function agregarDuodenoAccidente(inputType, inputDinamico) {
             inputDinamico.innerHTML += "  cm, con pérdida total de diferenciación entre capas y gas en la luz en porción epigástrica.";
             break;
     }
+}
+
+function agregarDuodenoDilatacion(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.type = "text";
+
+    switch (inputType) {
+
+        case "opcion-1":
+            inputDinamico.appendChild(inputText);
+            inputDinamico.innerHTML += ", ubicada en porción hipogátrica con dimensiones de ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+
+        case "opcion-2":
+            inputDinamico.appendChild(inputText);
+            inputDinamico.innerHTML += ", ubivada en porción mesogástrica con dimensiones de ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+
+        case "opcion-3":
+            inputDinamico.appendChild(inputText);
+            inputDinamico.innerHTML += ", ubicada en porción epigátrica con dimensiones de ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+    }
+
+    // if (inputType === "opcion-1") {
+    //     inputDinamico.appendChild(inputText);
+    //     inputDinamico.innerHTML += " , ubicada  en  porción hipo/meso/ epigástrica con dimensiones de ";
+    //     inputDinamico.appendChild(inputNumber);
+    //     inputDinamico.innerHTML += " cm.";
+    // }
 
 }
 
@@ -294,5 +332,5 @@ iniciarSelectDinamico("estomago-select-diferenciacion", "input-estomago-diferenc
 iniciarSelectDinamico("estomago-select-cuerpo", "input-estomago-cuerpo", agregarEstomagoCuerpo);
 iniciarSelectDinamico("duodeno-select-pared", "input-duodeno-pared", agregarDuodenoPared);
 iniciarSelectDinamico("duodeno-select-accidentes", "input-duodeno-accidente", agregarDuodenoAccidente);
-
+iniciarSelectDinamico("duodeno-select-dilatacion", "input-duodeno-dilatacion", agregarDuodenoDilatacion);
 
