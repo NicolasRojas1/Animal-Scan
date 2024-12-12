@@ -344,7 +344,7 @@ function agregarRamaLesion(inputType, inputDinamico) {
     }
 }
 
-function agregarDuodenoDilatacion(inputType, inputDinamico) {
+function agregarBazoLesion(inputType, inputDinamico) {
     const inputNumber = document.createElement("input");
     inputNumber.type = "number";
 
@@ -379,6 +379,37 @@ function agregarDuodenoDilatacion(inputType, inputDinamico) {
     }
 }
 
+function agregarHigadoLesion(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
+
+    switch (inputType) {
+
+        case "opcion-1":
+        case "opcion-2":
+        case "opcion-3":
+        case "opcion-4":
+        case "opcion-5":
+        case "opcion-6":
+        case "opcion-7":
+        case "opcion-8":
+        case "opcion-9":
+        case "opcion-10":
+        case "opcion-11":
+        case "opcion-12":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm y con leve señal doppler presente.";
+            break;
+
+        case "opcion-13":
+        case "opcion-14":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+
+    }
+}
+
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
 iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agregarDiferenciacionPared);
@@ -393,4 +424,5 @@ iniciarSelectDinamico("duodeno-select-dilatacion", "input-duodeno-dilatacion", a
 iniciarSelectDinamico("pancreas-select-lesiones", "input-pancreas-lesion", agregarPancrearLesion);
 iniciarSelectDinamico("rama-iz-select-lesiones", "input-rama-iz-lesion", agregarRamaLesion);
 iniciarSelectDinamico("rama-select-lesiones", "input-rama-lesion", agregarRamaLesion);
-iniciarSelectDinamico("bazo-select-lesiones","input-bazo-lesion",agregarDuodenoDilatacion);
+iniciarSelectDinamico("bazo-select-lesiones","input-bazo-lesion",agregarBazoLesion);
+iniciarSelectDinamico("higado-select-lesiones", "input-higado-lesion",agregarHigadoLesion);
