@@ -468,7 +468,7 @@
                     </select>,
                     <select id="rama-select-lesiones">
                         <option selected>sin lesiones focales o difusas</option>
-                        <!-- FALTAN AGREGAR 6 OPTIONS CON INPUT -->
+                        <!-- OPTIONS E INPUTS COMPLETOS -->
                         <option value="1" data-input-type="opcion-1">con lesión redondeada hipoecogénica con dimensiones
                             de </option>
                         <option value="2" data-input-type="opcion-2">con lesión redondeada hiperecogenica con
@@ -507,7 +507,7 @@
                     </select>,
                     <select id="bazo-select-lesiones">
                         <option selected>sin lesiones focales o multifocales</option>
-                        <!-- FALTAN 12 OPTION Y SU INPUT -->
+                        <!-- OPTIONS E INPUTS COMPLETOS -->
                          <option value="1" data-input-type="opcion-1">con una lesión en cuerpo del bazo,de apariencia homogénea hipoecogénica con forma redondeada </option>
                          <option value="2" data-input-type="opcion-2">con una lesión en cabeza del bazo,de apariencia homogénea hipoecogénica con forma redondeada </option>
                          <option value="3" data-input-type="opcion-3">con una lesión en cola del bazo,de apariencia homogénea hipoecogénica con forma redondeada </option>
@@ -561,7 +561,7 @@
                     </select>,
                     <select id="higado-select-lesiones">
                         <option selected>sin lesiones focales o multifocales.</option>
-                        <!-- FALTAN 14 OPTIONS CON INPUT -->
+                        <!-- OPTIONS E INPUTS COMPLETOS -->
                          <option value="1" data-input-type="opcion-1">con una lesión redondeada, de apariencia homogénea, hipoecogénica en lóbulo izquierdo, con dimensiones de </option>
                          <option value="2" data-input-type="opcion-2">con una lesión redondeada, de apariencia heterogénea, hipoecogénica en lóbulo izquierdo, con dimensiones de </option>
                          <option value="3" data-input-type="opcion-3">con una lesión redondeada, de apariencia homogénea, hipoecogénica en lóbulo izquierdo, con dimensiones de </option>
@@ -604,12 +604,9 @@
                     </select>.
                     <select>
                         <option selected>No se observa líquido entre lóbulos hepático</option>
-                        <option>Se observa cantidad leve de líquido libre entre lóbulos hepáticos y en espacio hepato
-                            diafragmático</option>
-                        <option>Se observa cantidad moderada de líquido libre entre lóbulos hepáticos y en espacio
-                            hepato diafragmático</option>
-                        <option>Se observa cantidad severa de líquido libre entre lóbulos hepáticos y en espacio hepato
-                            diafragmático</option>
+                        <option>Se observa cantidad leve de líquido libre entre lóbulos hepáticos y en espacio hepato diafragmático</option>
+                        <option>Se observa cantidad moderada de líquido libre entre lóbulos hepáticos y en espacio hepato diafragmático</option>
+                        <option>Se observa cantidad severa de líquido libre entre lóbulos hepáticos y en espacio hepato diafragmático</option>
                     </select>
                 </p>
             </article>
@@ -617,14 +614,15 @@
             <article>
                 <h4>Vesícula Biliar</h4>
                 <p>Órgano sacular con contorno conservado contenido anecogénico generador de refuerzo posterior,
-                    <select>
+                    <select id="vesicula-select-paredes">
                         <option selected>pared de superficie regular</option>
                         <option>pared de superficie regular con apariencia de doble capa</option>
                         <option>pared de superficie irregular</option>
                         <!-- FALTAN 2 OPTION CON INPUT -->
-
+                        <option value="1" data-input-type="opcion-1">pared con lesión focal irregular con dimensiones de hasta </option>
+                        <option value="2" data-input-type="opcion-2">pared con lesión focal redondeada con dimensiones de hasta </option>
                     </select>
-                    con espesor de <input type="number"> cm,
+                    <div id="input-vesicula-pared"></div>con espesor de <input type="number"> cm,
                     <select>
                         <option selected>normal para el nivel de distensión</option>
                         <option>engrosado para el grado de distensión</option>

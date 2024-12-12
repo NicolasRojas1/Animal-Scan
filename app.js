@@ -410,6 +410,15 @@ function agregarHigadoLesion(inputType, inputDinamico) {
     }
 }
 
+function agregarVesiculaPared(inputType, inputDinamico) {
+    if (inputType === "opcion-1" || inputType === "opcion-2") {
+        const inputNumber = document.createElement("input");
+        inputNumber.type = "number";
+        inputDinamico.appendChild(inputNumber);
+        inputDinamico.innerHTML += " cm";
+    }
+}
+
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
 iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agregarDiferenciacionPared);
@@ -426,3 +435,4 @@ iniciarSelectDinamico("rama-iz-select-lesiones", "input-rama-iz-lesion", agregar
 iniciarSelectDinamico("rama-select-lesiones", "input-rama-lesion", agregarRamaLesion);
 iniciarSelectDinamico("bazo-select-lesiones","input-bazo-lesion",agregarBazoLesion);
 iniciarSelectDinamico("higado-select-lesiones", "input-higado-lesion",agregarHigadoLesion);
+iniciarSelectDinamico("vesicula-select-paredes","input-vesicula-pared", agregarVesiculaPared);
