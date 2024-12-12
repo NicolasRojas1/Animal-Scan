@@ -428,6 +428,26 @@ function agregarRinonLesion(inputType, inputDinamico) {
     }
 }
 
+function agregarRinonMedula(inputType, inputDinamico) {
+    if (inputType === "opcion-1" || inputType === "opcion-2" || inputType === "opcion-3" || inputType === "opcion-4") {
+        const inputNumber = document.createElement("input");
+        inputNumber.type = "number";
+        inputDinamico.appendChild(inputNumber);
+        inputDinamico.innerHTML += " cm";
+    }
+}
+
+function agregarRinonPelvis(inputType, inputDinamico) {
+    if (inputType === "opcion-1" || inputType === "opcion-2" || inputType === "opcion-3" || inputType === "opcion-4") {
+        const inputNumber = document.createElement("input");
+        inputNumber.type = "number";
+        inputDinamico.appendChild(inputNumber);
+        inputDinamico.innerHTML += " cm,";
+    } else if (inputType === "opcion-5") {
+        inputDinamico.innerHTML += " de pelvis renal con material anecogénicos particulado desplazando médula y corteza  hacia cápsula,"
+    }
+}
+
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
 iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agregarDiferenciacionPared);
@@ -446,3 +466,8 @@ iniciarSelectDinamico("bazo-select-lesiones","input-bazo-lesion",agregarBazoLesi
 iniciarSelectDinamico("higado-select-lesiones", "input-higado-lesion",agregarHigadoLesion);
 iniciarSelectDinamico("vesicula-select-paredes","input-vesicula-pared", agregarVesiculaPared);
 iniciarSelectDinamico("iz-rinon-select-lesiones", "input-iz-rinon-lesion", agregarRinonLesion);
+iniciarSelectDinamico("iz-rinon-select-medula", "input-iz-rinon-medula", agregarRinonMedula);
+iniciarSelectDinamico("iz-rinon-select-pelvis", "input-iz-rinon-pelvis", agregarRinonPelvis);
+iniciarSelectDinamico("der-rinon-select-lesiones", "input-der-rinon-lesion", agregarRinonLesion);
+iniciarSelectDinamico("der-rinon-select-medula", "input-der-rinon-medula", agregarRinonMedula);
+iniciarSelectDinamico("der-rinon-select-pelvis", "input-der-rinon-pelvis", agregarRinonPelvis);
