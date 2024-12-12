@@ -312,14 +312,21 @@ function agregarDuodenoDilatacion(inputType, inputDinamico) {
             inputDinamico.innerHTML += " cm.";
             break;
     }
+}
 
-    // if (inputType === "opcion-1") {
-    //     inputDinamico.appendChild(inputText);
-    //     inputDinamico.innerHTML += " , ubicada  en  porción hipo/meso/ epigástrica con dimensiones de ";
-    //     inputDinamico.appendChild(inputNumber);
-    //     inputDinamico.innerHTML += " cm.";
-    // }
+function agregarPancrearLesion(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
 
+    if (inputType === "opcion-1" || 
+        inputType === "opcion-2" || 
+        inputType === "opcion-3" || 
+        inputType === "opcion-4" || 
+        inputType === "opcion-5" || 
+        inputType === "opcion-6") {
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm."; 
+    }
 }
 
 // Inicializar los selects con sus respectivas funciones específicas
@@ -333,4 +340,4 @@ iniciarSelectDinamico("estomago-select-cuerpo", "input-estomago-cuerpo", agregar
 iniciarSelectDinamico("duodeno-select-pared", "input-duodeno-pared", agregarDuodenoPared);
 iniciarSelectDinamico("duodeno-select-accidentes", "input-duodeno-accidente", agregarDuodenoAccidente);
 iniciarSelectDinamico("duodeno-select-dilatacion", "input-duodeno-dilatacion", agregarDuodenoDilatacion);
-
+iniciarSelectDinamico("pancreas-select-lesiones", "input-pancreas-lesion", agregarPancrearLesion);
