@@ -329,6 +329,21 @@ function agregarPancrearLesion(inputType, inputDinamico) {
     }
 }
 
+function agregarRamaLesion(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
+
+    if (inputType === "opcion-1" || 
+        inputType === "opcion-2" || 
+        inputType === "opcion-3" || 
+        inputType === "opcion-4" || 
+        inputType === "opcion-5" || 
+        inputType === "opcion-6") {
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm."; 
+    }
+}
+
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
 iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agregarDiferenciacionPared);
@@ -341,3 +356,5 @@ iniciarSelectDinamico("duodeno-select-pared", "input-duodeno-pared", agregarDuod
 iniciarSelectDinamico("duodeno-select-accidentes", "input-duodeno-accidente", agregarDuodenoAccidente);
 iniciarSelectDinamico("duodeno-select-dilatacion", "input-duodeno-dilatacion", agregarDuodenoDilatacion);
 iniciarSelectDinamico("pancreas-select-lesiones", "input-pancreas-lesion", agregarPancrearLesion);
+iniciarSelectDinamico("rama-iz-select-lesiones", "input-rama-iz-lesion", agregarRamaLesion);
+iniciarSelectDinamico("rama-select-lesiones", "input-rama-lesion", agregarRamaLesion);
