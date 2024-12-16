@@ -448,6 +448,26 @@ function agregarRinonPelvis(inputType, inputDinamico) {
     }
 }
 
+function agregarUteroMunon(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
+
+    switch (inputType) {
+
+        case "opcion-1":
+            inputDinamico.innerHTML += " y ecogénica heterogénea, grasa peritoneal reactiva rodeandola y con dimensiones de hasta ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+
+        case "opcion-2":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, y contenido anecogénico particulado dentro de sí."
+            break;
+
+    }
+}
+
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
 iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agregarDiferenciacionPared);
@@ -471,3 +491,4 @@ iniciarSelectDinamico("iz-rinon-select-pelvis", "input-iz-rinon-pelvis", agregar
 iniciarSelectDinamico("der-rinon-select-lesiones", "input-der-rinon-lesion", agregarRinonLesion);
 iniciarSelectDinamico("der-rinon-select-medula", "input-der-rinon-medula", agregarRinonMedula);
 iniciarSelectDinamico("der-rinon-select-pelvis", "input-der-rinon-pelvis", agregarRinonPelvis);
+iniciarSelectDinamico("utero-select-munon", "input-utero-munon", agregarUteroMunon);

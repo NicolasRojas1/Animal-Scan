@@ -803,7 +803,7 @@
                          <option>heterogénea con presencia de  lesión hiperecogénica puntiforme</option>
 
                     </select> <div id="input-der-rinon-medula"></div>
-                    <select  id="der-rinon-select-pelvis">
+                    <select id="der-rinon-select-pelvis">
                         <option selected>no se observa dilatación de la pelvis renal, </option>
                         <!-- OPTIONS E INPUTS COMPLETOS-->
                         <option value="1" data-input-type="opcion-1">se observa dilatación leve de pelvis, con material anecogénico particulado y con dimensiones de hasta </option>
@@ -818,8 +818,7 @@
                         <option selected>ni tampoco dilatación de uréter proximal</option>
                         <!-- FALTAN 4 OPTION CON INPUT Y VERIFICAR OTRO OPTION -->
 
-                    </select> .Dimensiones <input type="number"> cm x <input type="number"> cm. Ahorto Renal:
-                    7.5(N:5.5-9.1)
+                    </select> .Dimensiones <input type="number"> cm x <input type="number"> cm. Ahorto Renal: 7.5(N:5.5-9.1)
                 </p>
             </article>
         </div>
@@ -830,12 +829,15 @@
             <article>
                 <h4>Útero</h4>
                 <p>
-                    <select>
-                        <option selected>Cuerpo, Cuerno izquierdo y cuerno derecho en posición anatómica conservada
+                    <select id="utero-select-munon">
+                        <option selected>Cuerpo, Cuerno izquierdo y cuerno derecho en posición anatómica conservada,
                         </option>
                         <!-- FALTAN 2 OPTION CON INPUT -->
+                         <option value="1" data-input-type="opcion-1">Se observa estructura compatible con muñón uterino de apariencia hipoecogénica</option>
+                         <option value="2" data-input-type="opcion-2">Se observa estructura compatible con muñón uterino con dilatación de luz de hasta</option>
 
-                    </select>,
+                    </select>
+                    <div id="input-utero-munon"></div>
                     <select>
                         <option selected>de apariencia hipoecogénica, homogénea</option>
                         <option>de apariencia hipoecogénica, heterogénea</option>
