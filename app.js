@@ -448,6 +448,38 @@ function agregarRinonPelvis(inputType, inputDinamico) {
     }
 }
 
+function agregarRinonUreter(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
+
+    switch (inputType) {
+
+        case "opcion-1":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+
+        case "opcion-2":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm con presencia de material hiperecogénico  sedimentado.";
+            break;
+
+        case "opcion-3":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, con estructura  hiperecogénica, redondeada generadora de sombra acústica, con dimensiones de "
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+
+        case "opcion-4":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm, con  estructura irregular hiperecogenica generadora de sombra acústica, con dimensiones de ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+    }
+}
+
 function agregarUteroMunon(inputType, inputDinamico) {
     const inputNumber = document.createElement("input");
     inputNumber.type = "number";
@@ -482,13 +514,14 @@ iniciarSelectDinamico("duodeno-select-dilatacion", "input-duodeno-dilatacion", a
 iniciarSelectDinamico("pancreas-select-lesiones", "input-pancreas-lesion", agregarPancrearLesion);
 iniciarSelectDinamico("rama-iz-select-lesiones", "input-rama-iz-lesion", agregarRamaLesion);
 iniciarSelectDinamico("rama-select-lesiones", "input-rama-lesion", agregarRamaLesion);
-iniciarSelectDinamico("bazo-select-lesiones","input-bazo-lesion",agregarBazoLesion);
-iniciarSelectDinamico("higado-select-lesiones", "input-higado-lesion",agregarHigadoLesion);
-iniciarSelectDinamico("vesicula-select-paredes","input-vesicula-pared", agregarVesiculaPared);
+iniciarSelectDinamico("bazo-select-lesiones", "input-bazo-lesion", agregarBazoLesion);
+iniciarSelectDinamico("higado-select-lesiones", "input-higado-lesion", agregarHigadoLesion);
+iniciarSelectDinamico("vesicula-select-paredes", "input-vesicula-pared", agregarVesiculaPared);
 iniciarSelectDinamico("iz-rinon-select-lesiones", "input-iz-rinon-lesion", agregarRinonLesion);
 iniciarSelectDinamico("iz-rinon-select-medula", "input-iz-rinon-medula", agregarRinonMedula);
 iniciarSelectDinamico("iz-rinon-select-pelvis", "input-iz-rinon-pelvis", agregarRinonPelvis);
 iniciarSelectDinamico("der-rinon-select-lesiones", "input-der-rinon-lesion", agregarRinonLesion);
 iniciarSelectDinamico("der-rinon-select-medula", "input-der-rinon-medula", agregarRinonMedula);
 iniciarSelectDinamico("der-rinon-select-pelvis", "input-der-rinon-pelvis", agregarRinonPelvis);
+iniciarSelectDinamico("der-rinon-select-ureter", "input-der-rinon-ureter", agregarRinonUreter);
 iniciarSelectDinamico("utero-select-munon", "input-utero-munon", agregarUteroMunon);
