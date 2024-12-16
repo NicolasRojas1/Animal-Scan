@@ -500,6 +500,26 @@ function agregarUteroMunon(inputType, inputDinamico) {
     }
 }
 
+function agregarUteroLesion(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
+
+    switch (inputType) {
+
+        case "opcion-1":
+            inputDinamico.innerHTML += "con dimensiones de hasta ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm,";
+            break;
+
+        case "opcion-2":
+            inputDinamico.innerHTML += "de hasta ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm,";
+            break;
+    }
+}
+
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
 iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agregarDiferenciacionPared);
@@ -526,3 +546,4 @@ iniciarSelectDinamico("der-rinon-select-pelvis", "input-der-rinon-pelvis", agreg
 iniciarSelectDinamico("der-rinon-select-ureter", "input-der-rinon-ureter", agregarRinonUreter);
 iniciarSelectDinamico("iz-rinon-select-ureter", "input-iz-rinon-ureter", agregarRinonUreter);
 iniciarSelectDinamico("utero-select-munon", "input-utero-munon", agregarUteroMunon);
+iniciarSelectDinamico("utero-select-lesiones", "input-utero-lesion", agregarUteroLesion);

@@ -857,12 +857,15 @@
                         <option selected>superficie regular</option>
                         <option>superficie irregular</option>
                     </select>,
-                    <select>
-                        <option selected>sin lesiones focales o difusas en su pared</option>
-                        <option>con presencia de lesiones hiperecogénicas puntiformes en la pared del órgano</option>
+                    <select id="utero-select-lesiones">
+                        <option selected>sin lesiones focales o difusas en su pared,</option>
+                        <option>con presencia de lesiones hiperecogénicas puntiformes en la pared del órgano,</option>
                         <!-- FALTAN 2 OPTION CON INPUT -->
-
-                    </select>,
+                        <option value="1" data-input-type="opcion-1">con presencia de lesiones redondeadas anecogénicas diseminadas en pared de todo el órgano</option>
+                        <option value="2" data-input-type="opcion-2">se observa foco con engrosamiento severo de la pared y apariencia heterogénea con dimensiones </option>
+                    </select>
+                    <div id="input-utero-lesion"></div>
+                    
                     <select>
                         <option selected>sin contenido en su luz</option>
                         <!-- FALTAN 6 OPTION CON INPUT -->
