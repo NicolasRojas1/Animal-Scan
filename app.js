@@ -524,4 +524,5 @@ iniciarSelectDinamico("der-rinon-select-lesiones", "input-der-rinon-lesion", agr
 iniciarSelectDinamico("der-rinon-select-medula", "input-der-rinon-medula", agregarRinonMedula);
 iniciarSelectDinamico("der-rinon-select-pelvis", "input-der-rinon-pelvis", agregarRinonPelvis);
 iniciarSelectDinamico("der-rinon-select-ureter", "input-der-rinon-ureter", agregarRinonUreter);
+iniciarSelectDinamico("iz-rinon-select-ureter", "input-iz-rinon-ureter", agregarRinonUreter);
 iniciarSelectDinamico("utero-select-munon", "input-utero-munon", agregarUteroMunon);
