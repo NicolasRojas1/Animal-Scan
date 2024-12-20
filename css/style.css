@@ -55,3 +55,6 @@ h4 { font-size: 2.8rem;}
 img {max-width: 100%;}
 
 p {margin: 0}
+
+/*-------------- Utilidades ----------*/
+.hidden { display: none;}
