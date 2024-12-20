@@ -632,3 +632,4 @@ iniciarSelectDinamico("prostata-select-lesiones", "input-prostata-lesion", agreg
 iniciarSelectDinamico("testiculo-der-select-lesiones", "input-testiculo-der-lesion", agregarTesticuloLesion);
 iniciarSelectDinamico("testiculo-izq-select-lesiones", "input-testiculo-izq-lesion", agregarTesticuloLesion);
 iniciarSelectDinamico("glandula-izq-select-ecotextura", "input-glandula-izq-ecotextura", agregarEcotexturaGlandula);
+iniciarSelectDinamico("glandula-der-select-ecotextura", "input-glandula-der-ecotextura", agregarEcotexturaGlandula);
