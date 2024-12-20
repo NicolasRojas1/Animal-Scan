@@ -586,6 +586,18 @@ function agregarTesticuloLesion(inputType, inputDinamico) {
     }
 }
 
+function agregarEcotexturaGlandula(inputType, inputDinamico) {
+    if (inputType === "opcion-1") {
+        const inputNumber = document.createElement("input");
+        inputDinamico.appendChild(inputNumber);
+        inputDinamico.innerHTML += " cm en polo craneal,";
+    } else if (inputType === "opcion-2") {
+        const inputNumber = document.createElement("input");
+        inputDinamico.appendChild(inputNumber);
+        inputDinamico.innerHTML += " cm en polo caudal,";
+    }
+}
+
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
 iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agregarDiferenciacionPared);
@@ -619,3 +631,4 @@ iniciarSelectDinamico("ovario-der-select-lesiones", "input-ovario-der-lesion", a
 iniciarSelectDinamico("prostata-select-lesiones", "input-prostata-lesion", agregarProstataLesion);
 iniciarSelectDinamico("testiculo-der-select-lesiones", "input-testiculo-der-lesion", agregarTesticuloLesion);
 iniciarSelectDinamico("testiculo-izq-select-lesiones", "input-testiculo-izq-lesion", agregarTesticuloLesion);
+iniciarSelectDinamico("glandula-izq-select-ecotextura", "input-glandula-izq-ecotextura", agregarEcotexturaGlandula);
