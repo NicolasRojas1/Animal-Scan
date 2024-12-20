@@ -531,6 +531,61 @@ function agregarUteroMaterial(inputType, inputDinamico) {
     }
 }
 
+function agregarOvarioLesion(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
+
+    switch (inputType) {
+
+        case "opcion-1":
+            inputDinamico.innerHTML += " dentro del parénquima con dimensiones de hasta ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+
+        case "opcion-2":
+            inputDinamico.innerHTML += " dentro del parénquima con dimensiones de ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+    }
+}
+
+function agregarProstataLesion(inputType, inputDinamico) {
+    const inputNumber = document.createElement("input");
+    inputNumber.type = "number";
+
+    switch (inputType) {
+
+        case "opcion-1":
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+
+        case "opcion-2":
+        case "opcion-3":
+        case "opcion-4":
+            inputDinamico.innerHTML += " distribuidas en todo el parénquima, con dimensiones de hasta ";
+            inputDinamico.appendChild(inputNumber);
+            inputDinamico.innerHTML += " cm.";
+            break;
+    }
+}
+
+function agregarTesticuloLesion(inputType, inputDinamico) {
+    if (inputType === "opcion-1" || inputType === "opcion-2" || inputType === "opcion-3" || inputType === "opcion-4" ) {
+        const inputNumber = document.createElement("input");
+        inputDinamico.innerHTML += " con dimensiones de ";
+        inputDinamico.appendChild(inputNumber);
+        inputDinamico.innerHTML += " cm.";
+    } else if(inputType === "opcion-5" || inputType === "opcion-6") {
+        const inputNumber = document.createElement("input");
+        inputDinamico.innerHTML += " con dimensiones de hasta ";
+        inputDinamico.appendChild(inputNumber);
+        inputDinamico.innerHTML += " cm.";
+    }
+}
+
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
 iniciarSelectDinamico("colon-select-opciones", "input-diferenciacion-pared", agregarDiferenciacionPared);
@@ -559,3 +614,7 @@ iniciarSelectDinamico("iz-rinon-select-ureter", "input-iz-rinon-ureter", agregar
 iniciarSelectDinamico("utero-select-munon", "input-utero-munon", agregarUteroMunon);
 iniciarSelectDinamico("utero-select-lesiones", "input-utero-lesion", agregarUteroLesion);
 iniciarSelectDinamico("utero-select-material", "input-utero-material", agregarUteroMaterial);
+iniciarSelectDinamico("ovario-izq-select-lesiones", "input-ovario-izq-lesion", agregarOvarioLesion);
+iniciarSelectDinamico("ovario-der-select-lesiones", "input-ovario-der-lesion", agregarOvarioLesion);
+iniciarSelectDinamico("prostata-select-lesiones", "input-prostata-lesion", agregarProstataLesion);
+iniciarSelectDinamico("testiculo-der-select-lesiones", "input-testiculo-der-lesion", agregarTesticuloLesion);
