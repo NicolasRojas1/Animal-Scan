@@ -618,3 +618,4 @@ iniciarSelectDinamico("ovario-izq-select-lesiones", "input-ovario-izq-lesion", a
 iniciarSelectDinamico("ovario-der-select-lesiones", "input-ovario-der-lesion", agregarOvarioLesion);
 iniciarSelectDinamico("prostata-select-lesiones", "input-prostata-lesion", agregarProstataLesion);
 iniciarSelectDinamico("testiculo-der-select-lesiones", "input-testiculo-der-lesion", agregarTesticuloLesion);
+iniciarSelectDinamico("testiculo-izq-select-lesiones", "input-testiculo-izq-lesion", agregarTesticuloLesion);
