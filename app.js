@@ -518,7 +518,23 @@ function agregarEcotexturaGlandula(inputType, inputDinamico) {
 }
 
 // ------------------ FUNCION DISPLAY -------------------
+document.getElementById("sexo").addEventListener("change", function() {
+    const value = this.value;
+    const infoHembra = document.getElementById("informacion-hembra");
+    const infoMacho = document.getElementById("informacion-macho");
 
+    // Ocultar divs
+    infoMacho.classList.add("hidden");
+    infoHembra.classList.add("hidden");
+
+    // Agregar la clase segun la seleccion
+    if (value === "macho") {
+        infoMacho.classList.remove("hidden");
+
+    } else if (value === "hembra") {
+        infoHembra.classList.remove("hidden")
+    }
+});
 
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);
