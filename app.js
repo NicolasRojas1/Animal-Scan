@@ -492,12 +492,12 @@ function agregarProstataLesion(inputType, inputDinamico) {
 }
 
 function agregarTesticuloLesion(inputType, inputDinamico) {
-    if (inputType === "opcion-1" || inputType === "opcion-2" || inputType === "opcion-3" || inputType === "opcion-4" ) {
+    if (inputType === "opcion-1" || inputType === "opcion-2" || inputType === "opcion-3" || inputType === "opcion-4") {
         const inputNumber = document.createElement("input");
         inputDinamico.innerHTML += " con dimensiones de ";
         inputDinamico.appendChild(inputNumber);
         inputDinamico.innerHTML += " cm.";
-    } else if(inputType === "opcion-5" || inputType === "opcion-6") {
+    } else if (inputType === "opcion-5" || inputType === "opcion-6") {
         const inputNumber = document.createElement("input");
         inputDinamico.innerHTML += " con dimensiones de hasta ";
         inputDinamico.appendChild(inputNumber);
@@ -518,7 +518,7 @@ function agregarEcotexturaGlandula(inputType, inputDinamico) {
 }
 
 // ------------------ FUNCION DISPLAY -------------------
-document.getElementById("sexo").addEventListener("change", function() {
+document.getElementById("sexo").addEventListener("change", function () {
     const value = this.value;
     const infoHembra = document.getElementById("informacion-hembra");
     const infoMacho = document.getElementById("informacion-macho");
@@ -535,6 +535,158 @@ document.getElementById("sexo").addEventListener("change", function() {
         infoHembra.classList.remove("hidden")
     }
 });
+
+// // Generando PDF
+// document.getElementById('download').addEventListener('click', () => {
+//     const element = document.querySelector('.contenedor');
+//     const options = {
+//         margin: 0.5,
+//         filename: 'contenido-completo.pdf',
+//         html2canvas: { scale: 4, scrollX: 0, scrollY: 0 }, // Ajuste de resolución y scroll
+//         jsPDF: { unit: 'px', format: 'a4', orientation: 'portrait' } // Tamaño A4 fijo
+//     };
+//     html2pdf().set(options).from(element).save();
+
+// });
+
+function prepararHTMLParaPDF() {
+    const originalContent = document.querySelector('.contenedor').cloneNode(true);
+
+    // Reemplazar select por su valor
+    const selects = originalContent.querySelectorAll("select");
+    selects.forEach(select => {
+        const selectedOption = select.options[select.selectedIndex]?.text || "sin seleccionar";
+        console.log(selectedOption);
+
+        const span = document.createElement("span");
+        span.textContent = selectedOption;
+        select.replaceWith(span);
+    });
+
+    // Reemplazar input de tipo número por su valor
+    const inputs = originalContent.querySelectorAll("input[type='number']");
+    inputs.forEach(input => {
+        const value = input.value || "sin valor";
+        const span = document.createElement("span");
+        span.textContent = `${value}`;
+        input.replaceWith(span);
+    });
+
+    // Imprimir en consola el contenido para depuración
+    console.log(originalContent);
+
+        // Asegúrate de aplicar el CSS directamente en el HTML
+        const style = document.createElement("style");
+        style.textContent = `
+            .seccion {
+                page-break-before: always;
+            }
+            .contenedor {
+                page-break-inside: avoid;
+            }
+            p {
+                page-break-inside: avoid;
+            }
+            table {
+                page-break-after: always;
+            }
+            img {
+                page-break-inside: avoid;
+            }
+        `;
+        document.head.appendChild(style);
+    
+        return originalContent;
+}
+
+function esperarRecursos(callback) {
+    const images = document.querySelectorAll('img');
+    const promises = Array.from(images).map(img => {
+        return new Promise(resolve => {
+            if (img.complete) resolve();
+            else img.onload = img.onerror = resolve;
+        });
+    });
+
+    Promise.all(promises).then(callback);
+}
+
+function generarPDF() {
+    const element = prepararHTMLParaPDF(); // Llama a la función antes de generar el PDF
+    const options = {
+        margin: [10, 10, 10, 10], // Márgenes
+        filename: 'reporte_completo.pdf', // Nombre del archivo
+        html2canvas: {
+            scale: 3, // Mejorar calidad
+            useCORS: true, // Usar CORS para fuentes externas y recursos
+            logging: true, // Habilitar logs para depuración
+            scrollX: 0, // Evitar desplazamiento horizontal
+            scrollY: 0 // Evitar desplazamiento vertical
+        },
+        jsPDF: {
+            unit: 'mm', // Unidad de medida
+            format: 'a4', // Formato de página
+            orientation: 'portrait', // Orientación vertical
+            compress: true, // Comprimir el PDF generado
+            autoPaging: true, // Activar el auto-paginado
+            pageBreak: true // Configurar saltos de página automáticos
+        }
+    };
+
+    html2pdf().from(element).set(options).save();
+}
+
+
+function generarPDFConRecursos() {
+    esperarRecursos(() => {
+        generarPDF();
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const botonGenerarPDF = document.getElementById('generar-pdf');
+    botonGenerarPDF.addEventListener('click', generarPDF);
+});
+
+
+function ajustarAnchoSelect(selectElement) {
+    const selectedOption = selectElement.options[selectElement.selectedIndex];
+    
+    // Crear un elemento invisible que contiene el texto de la opción seleccionada
+    const tempSpan = document.createElement('span');
+    tempSpan.style.position = 'absolute';
+    tempSpan.style.visibility = 'hidden';
+    tempSpan.style.whiteSpace = 'nowrap'; // Evitar el salto de línea
+    tempSpan.textContent = selectedOption.textContent;
+    
+    // Agregar el span al body para medir su ancho
+    document.body.appendChild(tempSpan);
+    
+    // Obtener el ancho del texto de la opción seleccionada
+    const optionWidth = tempSpan.offsetWidth;
+  
+    // Eliminar el span temporal del DOM
+    document.body.removeChild(tempSpan);
+  
+    // Establecer el ancho del select en base al ancho de la opción seleccionada
+    selectElement.style.width = `${Math.max(optionWidth + 20, 150)}px`; // Ajusta el ancho con algo de margen
+  }
+  
+  // Aplica la función a todos los selects con la clase 'ajustar-ancho'
+  document.querySelectorAll('.ajustar-ancho').forEach(function(selectElement) {
+    // Llama a la función cuando se cambie la opción seleccionada
+    selectElement.addEventListener('change', function() {
+      ajustarAnchoSelect(this);
+    });
+  
+    // Inicializa el tamaño cuando se carga la página
+    ajustarAnchoSelect(selectElement);
+  });
+  
+  
+  
+
 
 // Inicializar los selects con sus respectivas funciones específicas
 iniciarSelectDinamico("urinario-select-opciones", "input-dinamico", agregarMaterialEnLuz);

@@ -23,11 +23,12 @@ body {
     line-height: 2;
 }
 
-/* ------------- Globales ---------------*/
+/* ------------- Globales ---------------*/ 
+
 .contenedor {
     max-width: 100rem;
     width: 90%;
-    width: min(90%, 100rem); /*Es lo mismo que las 2 lineas de arriba*/
+    width: min(90%, 100rem);
     margin: 0 auto;
 }
 
@@ -58,3 +59,82 @@ p {margin: 0}
 
 /*-------------- Utilidades ----------*/
 .hidden { display: none;}
+
+@media print {
+    .contenedor {
+        max-width: 800px;
+        min-height: 100vh;
+        font-size: 12px;
+        line-height: 1.5;
+        page-break-inside: avoid; /* Evita cortes dentro del contenedor */
+        /*page-break-before: always; /* Fuerza un salto de página antes del contenedor */
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        page-break-inside: avoid; /* Evita cortes dentro de las imágenes */
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: avoid; /* Evita cortes dentro de las tablas */
+    }
+
+    /* Agregar un salto de página después de cada párrafo */
+    p {
+        page-break-after: avoid; 
+    }
+
+    /* Agregar un salto de página antes de cada sección */
+    .seccion {
+        page-break-before: always;
+    }
+}
+
+.formulario {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; 
+}
+  
+  select, input {
+    margin: 0;
+    padding: 0;
+    /*border: none;*/
+  }
+
+  .datos-generales input,
+  .datos-generales select{
+    width: 23rem;
+    display:inline-flex
+  }
+
+  .datos-generales label{
+    width: 9rem;
+    display:inline-flex
+  }
+  
+  textarea {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: 100%; /* Limita el ancho máximo */
+    min-height: 100px; /* Altura inicial */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    resize: both; /* Permite redimensionar */
+    outline: none; /* Elimina el borde azul al hacer clic */
+  }
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
