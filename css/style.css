@@ -102,8 +102,25 @@ p {margin: 0}
   select, input {
     margin: 0;
     padding: 0;
-    /*border: none;*/
+    background: none; /* Remueve el fondo por defecto */
+    /* border: none;   */
+    appearance: none; /* Estándar */ 
   }
+
+  select {
+    width: auto; /* Permite al script controlar el ancho */
+    min-width: 5rem; /* Opcional: establece un ancho mínimo */
+  }
+
+  @media print {
+    select, input {
+      border: none; /* Sin bordes en la impresión */
+      background: none; /* Sin fondo en la impresión */
+      box-shadow: none; /* Elimina cualquier sombra */
+      color: inherit; /* Mantén el color del texto */
+    }
+}
+
 
   .datos-generales input,
   .datos-generales select{
@@ -127,6 +144,8 @@ p {margin: 0}
     resize: both; /* Permite redimensionar */
     outline: none; /* Elimina el borde azul al hacer clic */
   }
+
+  
   
   
   

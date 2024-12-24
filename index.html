@@ -68,21 +68,21 @@
             <article class="urinario">
                 <h4>Vejiga</h4>
                 <p>Posición anatómica conservada, órgano sacular, con pared trilaminar de superficie
-                    <select class="ajustar-ancho">
+                    <select class="dynamic-width">
                         <option>irregular</option>
                         <option>regular</option>
                     </select>
                     de grosor <input type="number"> cm, grosor
-                    <select class="ajustar-ancho">
+                    <select class="dynamic-width">
                         <option>normal</option>
                         <option>engrosado</option>
                     </select> para el grado de distensión, presenta cantidad
-                    <select class="ajustar-ancho">
+                    <select class="dynamic-width">
                         <option>leve</option>
                         <option>moderada</option>
                         <option>severa</option>
                     </select> de contenido anecogénico en su luz,
-                    <select id="urinario-select-opciones" class="ajustar-ancho">
+                    <select id="urinario-select-opciones" class="dynamic-width">
                         <option selected>sin presencia de sedimento u urolitos en su luz</option>
                         <option>con presencia leve de material hiperecogénico sedimentado</option>
                         <option>con presencia moderada de material hiperecogénico sedimentado</option>
@@ -99,7 +99,7 @@
 
                 <div id="input-dinamico"></div>
 
-                <select class="ajustar-ancho">
+                <select class="dynamic-width">
                     <option selected>Sin liquido libre en espacio cistocolico</option>
                     <option>Con presencia leve de material anecogenico en flotación en espacio cistocolico</option>
                     <option>Con presencia moderada de material anecogenico en flotación en espacio cistocolico</option>
@@ -1285,11 +1285,15 @@
     </div>
 
     <button id="generar-pdf">Generar PDF</button>
+    <button id="imprimir">Generar WORD</button>
 
 
     <script src="/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.0.0/docx.min.js"></script>
+    <script type="module" src="app.js"></script>
+
 
 
 </body>
