@@ -546,11 +546,7 @@ document.addEventListener("DOMContentLoaded", () => {
             span.style.position = "absolute";
             span.style.font = getComputedStyle(el).font;  // Asegúrate de que la fuente sea la misma
 
-            // Establecer el contenido a medir correctamente
-            if (el.tagName === "INPUT") {
-                // Si hay un valor, úsalo; si no, usa el placeholder
-                span.textContent = el.value || el.placeholder || " ";
-            } else if (el.tagName === "SELECT") {
+            if (el.tagName === "SELECT") {
                 // Medir el texto de la opción seleccionada
                 const selectedOption = el.options[el.selectedIndex]; // Obtener la opción seleccionada
                 span.textContent = selectedOption ? selectedOption.text : ""; // Si hay opción seleccionada, tomar su texto

@@ -107,6 +107,8 @@ p {margin: 0}
     appearance: none; /* Estándar */ 
   }
 
+
+
   select {
     width: auto; /* Permite al script controlar el ancho */
     min-width: 5rem; /* Opcional: establece un ancho mínimo */
