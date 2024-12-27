@@ -72,7 +72,7 @@
                         <option>irregular</option>
                         <option>regular</option>
                     </select>
-                    de grosor <input type="number"> cm, grosor
+                    de grosor <input type="text" class="input-dynamic-width"> cm, grosor
                     <select class="dynamic-width">
                         <option>normal</option>
                         <option>engrosado</option>
@@ -106,8 +106,7 @@
                     <option>Con presencia severa de material anecogenico en flotación en espacio cistocolico</option>
                     <option>Con presencia leve de material anecogenico particulado en flotación en espacio cistocolico</option>
                     <option>Con presencia moderada de material anecogenico particulado en flotación en espacio cistocolico</option>
-                    <option>Con presencia severa de material anecogenico particulado en flotación en espacio cistocolico
-                    </option>
+                    <option>Con presencia severa de material anecogenico particulado en flotación en espacio cistocolico</option>
                 </select>
                 </p>
             </article>
@@ -118,7 +117,7 @@
 
             <article>
                 <h4>Colón</h4>
-                <p>Órgano con grosor de pared de <input type="number"> cm
+                <p>Órgano con grosor de pared de <input type="text" class="input-dynamic-width"> cm
                     <select class="dynamic-width">
                         <option selected>normal</option>
                         <option>engrosado</option>
@@ -158,8 +157,7 @@
                         <option>con pérdida de diferenciación entre capas</option>
                         <option>con presencia de múltiples focos hiperecogénicos en mucosa perdiendo disposición normal de sus capas</option>
                         <option>se observa predominancia marcada de capa muscular en todo el órgano</option>
-                        <option value="1" data-input-type="opcion-1">con foco con pérdida de diferenciación entre capas
-                        </option>
+                        <option value="1" data-input-type="opcion-1">con foco con pérdida de diferenciación entre capas</option>
                     </select>
                 <div id="input-yeyuno-pared"></div>
 
@@ -188,7 +186,7 @@
 
                 </select>
                 <div id="input-yeyuno-accidente"></div>
-                . Espesor promedio de <input type="number"> cm, 
+                . Espesor promedio de <input type="text" class="input-dynamic-width"> cm, 
                 <select class="dynamic-width">
                     <option selected>dentro de rangos normales</option>
                     <option>aumentado</option>
@@ -220,7 +218,7 @@
                 <h4>Estómago</h4>
                 <p>Órgano
                     <select class="dynamic-width">
-                        <option selected> -- Seleccione una opción -- </option>
+                        <option selected>-- Seleccione una opción --</option>
                         <option>con cantidad leve de contenido mixto líquido</option>
                         <option>con cantidad moderada de contenido mixto líquido</option>
                         <option>con cantidad severa de contenido mixto líquido</option>
@@ -242,7 +240,7 @@
 
                     </select>
                 <div id="input-estomago-diferenciacion"></div>
-                Pared de hasta <input type="number"> cm con pliegues y <input type="number"> cm sin
+                Pared de hasta <input type="text" class="input-dynamic-width"> cm con pliegues y <input type="text" class="input-dynamic-width"> cm sin
                 pliegues,
                 <select class="dynamic-width">
                     <option selected>grosor normal para la talla del paciente</option>
@@ -296,12 +294,9 @@
                     <option>Se observa en porción mesogástrica lesión compatible con intususcepción.</option>
                     <option>Se observa en porción epigástrica lesión compatible con intususcepción.</option>
                     <!-- OPTIONS E INPUTS CREADOS -->
-                    <option value="1" data-input-type="opcion-1">Se observa estructura redondeada con dimensiones de
-                    </option>
-                    <option value="2" data-input-type="opcion-2">Se observa estructura redondeada con dimensiones de
-                    </option>
-                    <option value="3" data-input-type="opcion-3">Se observa estructura redondeada con dimensiones de
-                    </option>
+                    <option value="1" data-input-type="opcion-1">Se observa estructura redondeada con dimensiones de</option>
+                    <option value="2" data-input-type="opcion-2">Se observa estructura redondeada con dimensiones de</option>
+                    <option value="3" data-input-type="opcion-3">Se observa estructura redondeada con dimensiones de</option>
 
                 </select>
                 <div id="input-duodeno-accidente"></div> Grosor de <input type="number"> cm,
@@ -803,36 +798,28 @@
                         <option>de apariencia hipoecogénica, heterogénea</option>
                         <option>de apariencia hiperecogénica, heterogénea</option>
                     </select>,
-                    <select>
+                    <select class="dynamic-width">
                         <option selected>superficie regular</option>
                         <option>superficie irregular</option>
                     </select>,
-                    <select id="utero-select-lesiones">
+                    <select id="utero-select-lesiones" class="dynamic-width">
                         <option selected>sin lesiones focales o difusas en su pared,</option>
                         <option>con presencia de lesiones hiperecogénicas puntiformes en la pared del órgano,</option>
                         <!-- OPTIONS E INPUTS COMPLETOS-->
-                        <option value="1" data-input-type="opcion-1">con presencia de lesiones redondeadas anecogénicas
-                            diseminadas en pared de todo el órgano</option>
-                        <option value="2" data-input-type="opcion-2">se observa foco con engrosamiento severo de la
-                            pared y apariencia heterogénea con dimensiones </option>
+                        <option value="1" data-input-type="opcion-1">con presencia de lesiones redondeadas anecogénicas diseminadas en pared de todo el órgano</option>
+                        <option value="2" data-input-type="opcion-2">se observa foco con engrosamiento severo de la pared y apariencia heterogénea con dimensiones </option>
                     </select>
                     <div id="input-utero-lesion"></div>
 
-                    <select id="utero-select-material">
+                    <select id="utero-select-material" class="dynamic-width">
                         <option selected>sin contenido en su luz.</option>
                         <!-- OPTIONS E INPUTS COMPLETOS-->
-                        <option value="1" data-input-type="opcion-1"> con presencia leve de material anecogenico
-                            particulado dentro de la luz de cuernos y cuerpo,</option>
-                        <option value="2" data-input-type="opcion-2">con presencia moderada de material anecogenico
-                            particulado dentro de la luz de cuernos y cuerpo,</option>
-                        <option value="3" data-input-type="opcion-3">con presencia severa de material anecogenico
-                            particulado dentro de la luz de cuernos y cuerpo,</option>
-                        <option value="4" data-input-type="opcion-4">con presencia leve de material hiperecogénico
-                            particulado dentro de la luz de cuernos y cuerpo,</option>
-                        <option value="5" data-input-type="opcion-5">con presencia moderada de material hiperecogénico
-                            particulado dentro de la luz de cuernos y cuerpo,</option>
-                        <option value="6" data-input-type="opcion-6">con presencia severa de material hiperecogénico
-                            particulado dentro de la luz de cuernos y cuerpo,</option>
+                        <option value="1" data-input-type="opcion-1"> con presencia leve de material anecogenico particulado dentro de la luz de cuernos y cuerpo,</option>
+                        <option value="2" data-input-type="opcion-2">con presencia moderada de material anecogenico particulado dentro de la luz de cuernos y cuerpo,</option>
+                        <option value="3" data-input-type="opcion-3">con presencia severa de material anecogenico particulado dentro de la luz de cuernos y cuerpo,</option>
+                        <option value="4" data-input-type="opcion-4">con presencia leve de material hiperecogénico particulado dentro de la luz de cuernos y cuerpo,</option>
+                        <option value="5" data-input-type="opcion-5">con presencia moderada de material hiperecogénico particulado dentro de la luz de cuernos y cuerpo,</option>
+                        <option value="6" data-input-type="opcion-6">con presencia severa de material hiperecogénico particulado dentro de la luz de cuernos y cuerpo,</option>
 
                     </select>
                     <div id="input-utero-material"></div>
@@ -844,28 +831,25 @@
                 <article>
                     <h4>Ovario Izquierdo</h4>
                     <p>
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>Órgano en posición anatómica conservada</option>
-                            <option>Estructura compatible con ovario izquierdo, ubicado caudal a riñón izquierdo
-                            </option>
+                            <option>Estructura compatible con ovario izquierdo, ubicado caudal a riñón izquierdo</option>
                             <option>Estructura compatible con ovario izquierdo, ubicado en hipogastrio</option>
                             <option>Estructura compatible con ovario izquierdo, ubicado en mesogastrio</option>
                         </select>,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>forma redondeada</option>
                             <option>forma irregular</option>
                         </select>,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>de apariencia homogénea</option>
                             <option>de apariencia heterogénea</option>
                         </select>,
-                        <select id="ovario-izq-select-lesiones">
+                        <select id="ovario-izq-select-lesiones" class="dynamic-width">
                             <option selected>sin lesiones focales o difusas.</option>
                             <!-- OPTIONS E INPUTS COMPLETOS-->
-                            <option value="1" data-input-type="opcion-1">con presencia de múltiples lesiones redondeadas
-                                anecogénicas</option>
-                            <option value="2" data-input-type="opcion-2">con presencia de lesión anecogenica redondeada
-                            </option>
+                            <option value="1" data-input-type="opcion-1">con presencia de múltiples lesiones redondeadas anecogénicas</option>
+                            <option value="2" data-input-type="opcion-2">con presencia de lesión anecogenica redondeada</option>
 
                         </select>
                     <div id="input-ovario-izq-lesion"></div>
@@ -876,27 +860,25 @@
                 <article>
                     <h4>Ovario Derecho</h4>
                     <p>
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>Órgano en posición anatómica conservada</option>
                             <option>Estructura compatible con ovario derecho, ubicado caudal a riñón derecho</option>
                             <option>Estructura compatible con ovario derecho, ubicado en hipogastrio</option>
                             <option>Estructura compatible con ovario derecho, ubicado en mesogastrio</option>
                         </select>,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>forma redondeada</option>
                             <option>forma irregular</option>
                         </select>,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>de apariencia homogénea</option>
                             <option>de apariencia heterogénea</option>
                         </select>,
-                        <select id="ovario-der-select-lesiones">
+                        <select id="ovario-der-select-lesiones" class="dynamic-width">
                             <option selected>sin lesiones focales o difusas.</option>
                             <!-- OPTIONS E INPUTS COMPLETOS-->
-                            <option value="1" data-input-type="opcion-1">con presencia de múltiples lesiones redondeadas
-                                anecogénicas</option>
-                            <option value="2" data-input-type="opcion-2">con presencia de lesión anecogenica redondeada
-                            </option>
+                            <option value="1" data-input-type="opcion-1">con presencia de múltiples lesiones redondeadas anecogénicas</option>
+                            <option value="2" data-input-type="opcion-2">con presencia de lesión anecogenica redondeada</option>
 
                         </select>
                     <div id="input-ovario-der-lesion"></div>
@@ -905,38 +887,33 @@
                 </article>
             </div>
 
-
             <div id="informacion-macho">
                 <article>
                     <h4>Próstata</h4>
                     <p>Órgano en posición anatómica normal,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>bordes regulares</option>
                             <option>bordes irregulares</option>
                         </select>, de
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>forma fusiforme</option>
                             <option>forma redondeada y bilobulada</option>
                         </select>, de
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>apariencia hipoecogénica</option>
                             <option>apariencia hiperecogénica</option>
                         </select>, de
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>ecotextura homogénea</option>
-                            <option>ecotextura heterogénea </option>
+                            <option>ecotextura heterogénea</option>
                         </select>
-                        <select id="prostata-select-lesiones">
+                        <select id="prostata-select-lesiones" class="dynamic-width">
                             <option selected>sin lesiones focales o difusas.</option>
                             <!-- OPTIONS E INPUTS COMPLETOS-->
-                            <option value="1" data-input-type="opcion-1">con lesión redondeada anecogénica con
-                                dimensiones de hasta </option>
-                            <option value="2" data-input-type="opcion-2">con múltiples lesiones redondeadas anecogénicas
-                            </option>
-                            <option value="3" data-input-type="opcion-3">con múltiples lesiones irregulares anecogénicas
-                            </option>
-                            <option value="4" data-input-type="opcion-4">con múltiples lesiones irregulares
-                                hiperecogénicas</option>
+                            <option value="1" data-input-type="opcion-1">con lesión redondeada anecogénica con dimensiones de hasta </option>
+                            <option value="2" data-input-type="opcion-2">con múltiples lesiones redondeadas anecogénicas</option>
+                            <option value="3" data-input-type="opcion-3">con múltiples lesiones irregulares anecogénicas</option>
+                            <option value="4" data-input-type="opcion-4">con múltiples lesiones irregulares hiperecogénicas</option>
 
                         </select>
                     <div id="input-prostata-lesion"></div> Dimensiones: <input type="number"> cm.
@@ -946,41 +923,34 @@
                 <article>
                     <h4>Testiculo Derecho</h4>
                     <p>
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>Órgano en posición anatómica conservada</option>
                             <option>Órgano en posición subcutánea </option>
-                            <option>Órgano intraabdominal ubicado caudal a riñón izquierdo </option>
-                            <option>Órgano intraabdominal ubicado en mesogastrio </option>
-                            <option>Órgano intraabdominal ubicado en hipogastrio </option>
-                            <option>Órgano intraabdominal ubicado en cráneo lateral a la vejiga </option>
+                            <option>Órgano intraabdominal ubicado caudal a riñón izquierdo</option>
+                            <option>Órgano intraabdominal ubicado en mesogastrio</option>
+                            <option>Órgano intraabdominal ubicado en hipogastrio</option>
+                            <option>Órgano intraabdominal ubicado en cráneo lateral a la vejiga</option>
                         </select>,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>forma redondeada</option>
                             <option>forma irregular</option>
                         </select> de
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>apariencia homogénea hipoecogénica</option>
                             <option>apariencia homogénea hiperecogénica</option>
                             <option>apariencia heterogénea hiperecogénica</option>
                             <option>apariencia heterogénea hipoecogénica</option>
                         </select>,
-                        <select id="testiculo-der-select-lesiones">
+                        <select id="testiculo-der-select-lesiones" class="dynamic-width">
                             <option selected>sin lesiones focales o difusas.</option>
                             <!-- OPTIONS E INPUTS COMPLETOS-->
-                            <option value="1" data-input-type="opcion-1">con lesión redondeada de apariencia
-                                hipoecogénica</option>
-                            <option value="2" data-input-type="opcion-2">con lesión irregular de apariencia
-                                hipoecogénica</option>
-                            <option value="3" data-input-type="opcion-3">con lesión redondeada de apariencia
-                                hiperecogénica</option>
-                            <option value="4" data-input-type="opcion-4">con lesión redondeada anecogenica con
-                                dimensiones</option>
-                            <option value="5" data-input-type="opcion-5">con múltiples lesiones redondeadas de
-                                apariencia hipoecogénica</option>
-                            <option value="6" data-input-type="opcion-6">con múltiples lesiones redondeadas de
-                                apariencia hiperecogénicas</option>
-                            <option value="7" data-input-type="opcion-7">con múltiples lesiones redondeadas de
-                                apariencia anaecogénicas</option>
+                            <option value="1" data-input-type="opcion-1">con lesión redondeada de apariencia hipoecogénica</option>
+                            <option value="2" data-input-type="opcion-2">con lesión irregular de apariencia hipoecogénica</option>
+                            <option value="3" data-input-type="opcion-3">con lesión redondeada de apariencia hiperecogénica</option>
+                            <option value="4" data-input-type="opcion-4">con lesión redondeada anecogenica con dimensiones</option>
+                            <option value="5" data-input-type="opcion-5">con múltiples lesiones redondeadas de apariencia hipoecogénica</option>
+                            <option value="6" data-input-type="opcion-6">con múltiples lesiones redondeadas de apariencia hiperecogénicas</option>
+                            <option value="7" data-input-type="opcion-7">con múltiples lesiones redondeadas de apariencia anaecogénicas</option>
 
                         </select>
                     <div id="input-testiculo-der-lesion"></div> Dimensiones: <input type="number"> cm.
@@ -990,41 +960,34 @@
                 <article>
                     <h4>Testiculo Izquierdo</h4>
                     <p>
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>Órgano en posición anatómica conservada</option>
-                            <option>Órgano en posición subcutánea </option>
-                            <option>Órgano intraabdominal ubicado caudal a riñón derecho </option>
-                            <option>Órgano intraabdominal ubicado en mesogastrio </option>
-                            <option>Órgano intraabdominal ubicado en hipogastrio </option>
-                            <option>Órgano intraabdominal ubicado en cráneo lateral a la vejiga </option>
+                            <option>Órgano en posición subcutánea</option>
+                            <option>Órgano intraabdominal ubicado caudal a riñón derecho</option>
+                            <option>Órgano intraabdominal ubicado en mesogastrio</option>
+                            <option>Órgano intraabdominal ubicado en hipogastrio</option>
+                            <option>Órgano intraabdominal ubicado en cráneo lateral a la vejiga</option>
                         </select>,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>forma redondeada</option>
                             <option>forma irregular</option>
                         </select> de
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>apariencia homogénea hipoecogénica</option>
                             <option>apariencia homogénea hiperecogénica</option>
                             <option>apariencia heterogénea hiperecogénica</option>
                             <option>apariencia heterogénea hipoecogénica</option>
                         </select>,
-                        <select id="testiculo-izq-select-lesiones">
+                        <select id="testiculo-izq-select-lesiones" class="dynamic-width">
                             <option selected>sin lesiones focales o difusas.</option>
                             <!-- OPTIONS E INPUTS COMPLETOS-->
-                            <option value="1" data-input-type="opcion-1">con lesión redondeada de apariencia
-                                hipoecogénica</option>
-                            <option value="2" data-input-type="opcion-2">con lesión irregular de apariencia
-                                hipoecogénica</option>
-                            <option value="3" data-input-type="opcion-3">con lesión redondeada de apariencia
-                                hiperecogénica</option>
-                            <option value="4" data-input-type="opcion-4">con lesión redondeada anecogenica con
-                                dimensiones</option>
-                            <option value="5" data-input-type="opcion-5">con múltiples lesiones redondeadas de
-                                apariencia hipoecogénica</option>
-                            <option value="6" data-input-type="opcion-6">con múltiples lesiones redondeadas de
-                                apariencia hiperecogénicas</option>
-                            <option value="7" data-input-type="opcion-7">con múltiples lesiones redondeadas de
-                                apariencia anaecogénicas</option>
+                            <option value="1" data-input-type="opcion-1">con lesión redondeada de apariencia hipoecogénica</option>
+                            <option value="2" data-input-type="opcion-2">con lesión irregular de apariencia hipoecogénica</option>
+                            <option value="3" data-input-type="opcion-3">con lesión redondeada de apariencia hiperecogénica</option>
+                            <option value="4" data-input-type="opcion-4">con lesión redondeada anecogenica con dimensiones</option>
+                            <option value="5" data-input-type="opcion-5">con múltiples lesiones redondeadas de apariencia hipoecogénica</option>
+                            <option value="6" data-input-type="opcion-6">con múltiples lesiones redondeadas de apariencia hiperecogénicas</option>
+                            <option value="7" data-input-type="opcion-7">con múltiples lesiones redondeadas de apariencia anaecogénicas</option>
 
                         </select>
                     <div id="input-testiculo-izq-lesion"></div> Dimensiones: <input type="number"> cm.
@@ -1038,30 +1001,26 @@
                 <article>
                     <h4>Glándula Adrenal Izquierda</h4>
                     <p>Órgano en posición anatómica normal,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>forma conservada</option>
                             <option>forma irregular</option>
                         </select>,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>márgenes definido</option>
                             <option>márgenes irregulares</option>
                         </select>,
-                        <select id="glandula-izq-select-ecotextura">
+                        <select id="glandula-izq-select-ecotextura" class="dynamic-width">
                             <option selected>ecotextura homogénea,</option>
-                            <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo craneal,
-                            </option>
-                            <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo caudal,
-                            </option>
+                            <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo craneal,</option>
+                            <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo caudal,</option>
                             <!-- OPTIONS E INPUTS COMPLETOS -->
-                            <option value="1" data-input-type="opcion-1">ecotextura heterogénea, con lesión nodular
-                                hiperecogenica con dimensiones de </option>
-                            <option value="2" data-input-type="opcion-2">ecotextura heterogénea, con lesión nodular
-                                hiperecogenica con dimensiones de </option>
+                            <option value="1" data-input-type="opcion-1">ecotextura heterogénea, con lesión nodular hiperecogenica con dimensiones de </option>
+                            <option value="2" data-input-type="opcion-2">ecotextura heterogénea, con lesión nodular hiperecogenica con dimensiones de </option>
 
                         </select>
                     <div id="input-glandula-izq-ecotextura"></div>
-                    <select>
-                        <option selected>buena diferenciación corticomedular </option>
+                    <select class="dynamic-width">
+                        <option selected>buena diferenciación corticomedular</option>
                         <option>pérdida de diferenciación corticomedular</option>
                     </select>. Dimensiones: Largo: <input type="number"> cm; polo caudal: <input type="number"> cm; polo
                     craneal: <input type="number"> cm.</p>
@@ -1070,30 +1029,26 @@
                 <article>
                     <h4>Glándula Adrenal Derecha</h4>
                     <p>Órgano en posición anatómica normal,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>forma conservada</option>
                             <option>forma irregular</option>
                         </select>,
-                        <select>
+                        <select class="dynamic-width">
                             <option selected>márgenes definido</option>
                             <option>márgenes irregulares</option>
                         </select>,
-                        <select id="glandula-der-select-ecotextura">
+                        <select id="glandula-der-select-ecotextura" class="dynamic-width">
                             <option selected>ecotextura homogénea,</option>
-                            <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo craneal,
-                            </option>
-                            <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo caudal,
-                            </option>
+                            <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo craneal,</option>
+                            <option>ecotextura heterogénea, con lesiones puntiformes hiperecogénicas en polo caudal,</option>
                             <!-- OPTIONS E INPUTS COMPLETOS -->
-                            <option value="1" data-input-type="opcion-1">ecotextura heterogénea, con lesión nodular
-                                hiperecogenica con dimensiones de </option>
-                            <option value="2" data-input-type="opcion-2">ecotextura heterogénea, con lesión nodular
-                                hiperecogenica con dimensiones de </option>
+                            <option value="1" data-input-type="opcion-1">ecotextura heterogénea, con lesión nodular hiperecogenica con dimensiones de </option>
+                            <option value="2" data-input-type="opcion-2">ecotextura heterogénea, con lesión nodular hiperecogenica con dimensiones de </option>
 
                         </select>
                     <div id="input-glandula-der-ecotextura"></div>
-                    <select>
-                        <option selected>buena diferenciación corticomedular </option>
+                    <select class="dynamic-width">
+                        <option selected>buena diferenciación corticomedular</option>
                         <option>pérdida de diferenciación corticomedular</option>
                     </select>. Dimensiones: Largo: <input type="number"> cm; polo caudal: <input type="number"> cm; polo
                     craneal: <input type="number"> cm.
@@ -1109,7 +1064,7 @@
                 </article>
             </div>
 
-            <article  class="seccion">
+            <article class="seccion">
                 <h4>Otros</h4>
                 <textarea></textarea>
             </article>
@@ -1134,9 +1089,7 @@
                 <textarea></textarea>
             </div>
 
-            <p>*La ecografía es un método diagnóstico complementario que debe ser evaluado en conjunto con el examen
-                clínico. Las apreciaciones presentes en este reporte son válidas para la ecografía realizada en la fecha
-                estipulada al inicio de este reporte.</p>
+            <p>*La ecografía es un método diagnóstico complementario que debe ser evaluado en conjunto con el examen clínico. Las apreciaciones presentes en este reporte son válidas para la ecografía realizada en la fecha estipulada al inicio de este reporte.</p>
     </section>
 
     <div>

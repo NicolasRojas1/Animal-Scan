@@ -532,8 +532,6 @@ document.getElementById("sexo").addEventListener("change", function () {
 
 
 //------------------------ AJUSTAR ANCHOS DE SELECTS ---------------------------
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const adjustWidth = () => {
         const elements = document.querySelectorAll(".dynamic-width");
@@ -580,6 +578,52 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
+//------------------------ AJUSTAR ANCHOS DE INPUTS ---------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const ajustarAnchosInputs = () => {
+        const inputs = document.querySelectorAll(".input-dynamic-width");
+
+        inputs.forEach(input => {
+            // Crear el span para medición
+            const span = document.createElement("span");
+            span.style.visibility = "hidden";
+            span.style.whiteSpace = "nowrap";
+            span.style.position = "absolute";
+            span.style.font = getComputedStyle(input).font; // Asegúrate de que la fuente sea la misma
+            span.textContent = input.value || input.placeholder || ""; // Medir texto o placeholder
+
+            // Añadir el span al body para medir su ancho
+            document.body.appendChild(span);
+
+            // Forzar un redibujo y luego medir el ancho
+            requestAnimationFrame(() => {
+                const newWidth = span.offsetWidth + 10; // Añadir un margen de 10px
+
+                console.log(`Calculated width for INPUT: ${newWidth}px`); // Para depuración
+
+                // Establecer el ancho calculado sin restricciones
+                input.style.width = `${newWidth}px`;
+
+                // Eliminar el span del DOM después de la medición
+                document.body.removeChild(span);
+            });
+        });
+    };
+
+    // Ajuste inicial
+    ajustarAnchosInputs();
+
+    // Reajustar el tamaño al modificar el contenido
+    document.addEventListener("input", (e) => {
+        if (e.target.matches(".input-dynamic-width")) {
+            ajustarAnchosInputs();
+        }
+    });
+});
+
+
 
 
 
