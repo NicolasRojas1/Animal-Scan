@@ -18,22 +18,114 @@ function iniciarSelectDinamico(selectId, inputDinamicoId, callback) {
     });
 }
 
+//------------------------ AJUSTAR ANCHOS DE SELECTS ---------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const adjustWidth = () => {
+        const elements = document.querySelectorAll(".dynamic-width");
+
+        elements.forEach(el => {
+            // Crear el span para medición
+            const span = document.createElement("span");
+            span.style.visibility = "hidden";
+            span.style.whiteSpace = "nowrap";
+            span.style.position = "absolute";
+            span.style.font = getComputedStyle(el).font;  // Asegúrate de que la fuente sea la misma
+
+            if (el.tagName === "SELECT") {
+                // Medir el texto de la opción seleccionada
+                const selectedOption = el.options[el.selectedIndex]; // Obtener la opción seleccionada
+                span.textContent = selectedOption ? selectedOption.text : ""; // Si hay opción seleccionada, tomar su texto
+            }
+
+            // Añadir el span al body para medir su ancho
+            document.body.appendChild(span);
+
+            // Forzar un redibujo y luego medir el ancho
+            requestAnimationFrame(() => {
+                const newWidth = span.offsetWidth + 10; // Añadir un margen de 10px
+
+                //console.log(`Calculated width for ${el.tagName}: ${newWidth}px`);  // Para depuración
+
+                // Establecer el ancho calculado sin restricciones
+                el.style.width = `${newWidth}px`;
+
+                // Eliminar el span del DOM después de la medición
+                document.body.removeChild(span);
+            });
+        });
+    };
+
+    // Ajuste inicial
+    adjustWidth();
+
+    // Reajustar el tamaño al modificar el contenido
+    document.addEventListener("input", (e) => {
+        if (e.target.matches(".dynamic-width")) {
+            adjustWidth();
+        }
+    });
+});
+
+
+//------------------------ AJUSTAR ANCHOS DE INPUTS ---------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const ajustarAnchosInputs = () => {
+        const inputs = document.querySelectorAll(".input-dynamic-width");
+
+        inputs.forEach(input => {
+            // Crear el span para medición
+            const span = document.createElement("span");
+            span.style.visibility = "hidden";
+            span.style.whiteSpace = "nowrap";
+            span.style.position = "absolute";
+            span.style.font = getComputedStyle(input).font; // Asegúrate de que la fuente sea la misma
+            span.textContent = input.value || input.placeholder || ""; // Medir texto o placeholder
+
+            // Añadir el span al body para medir su ancho
+            document.body.appendChild(span);
+
+            // Forzar un redibujo y luego medir el ancho
+            requestAnimationFrame(() => {
+                const newWidth = span.offsetWidth + 10; // Añadir un margen de 10px
+
+                //console.log(`Calculated width for INPUT: ${newWidth}px`); // Para depuración
+
+                // Establecer el ancho calculado sin restricciones
+                input.style.width = `${newWidth}px`;
+
+                // Eliminar el span del DOM después de la medición
+                document.body.removeChild(span);
+            });
+        });
+    };
+
+    // Ajuste inicial
+    ajustarAnchosInputs();
+
+    // Reajustar el tamaño al modificar el contenido
+    document.addEventListener("input", (e) => {
+        if (e.target.matches(".input-dynamic-width")) {
+            ajustarAnchosInputs();
+        }
+    });
+});
+
 // Función específica para manejar el input dinámico
 function agregarMaterialEnLuz(inputType, inputDinamico) {
     const inputText = document.createElement("input");
-        inputText.type = "text";
-        const inputNumber = document.createElement("input");
-        inputNumber.type = "number";
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
+
     if (inputType === "opcion-1") {  
         inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " estructuras hiperecogénicas redondeadas con dimensiones de ";
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm";
 
     } else if (inputType === "opcion-2") {
         inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " estructuras hiperecogénicas irregulares con dimensiones de ";
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     }
 }
@@ -531,97 +623,7 @@ document.getElementById("sexo").addEventListener("change", function () {
 });
 
 
-//------------------------ AJUSTAR ANCHOS DE SELECTS ---------------------------
-document.addEventListener("DOMContentLoaded", () => {
-    const adjustWidth = () => {
-        const elements = document.querySelectorAll(".dynamic-width");
 
-        elements.forEach(el => {
-            // Crear el span para medición
-            const span = document.createElement("span");
-            span.style.visibility = "hidden";
-            span.style.whiteSpace = "nowrap";
-            span.style.position = "absolute";
-            span.style.font = getComputedStyle(el).font;  // Asegúrate de que la fuente sea la misma
-
-            if (el.tagName === "SELECT") {
-                // Medir el texto de la opción seleccionada
-                const selectedOption = el.options[el.selectedIndex]; // Obtener la opción seleccionada
-                span.textContent = selectedOption ? selectedOption.text : ""; // Si hay opción seleccionada, tomar su texto
-            }
-
-            // Añadir el span al body para medir su ancho
-            document.body.appendChild(span);
-
-            // Forzar un redibujo y luego medir el ancho
-            requestAnimationFrame(() => {
-                const newWidth = span.offsetWidth + 10; // Añadir un margen de 10px
-
-                console.log(`Calculated width for ${el.tagName}: ${newWidth}px`);  // Para depuración
-
-                // Establecer el ancho calculado sin restricciones
-                el.style.width = `${newWidth}px`;
-
-                // Eliminar el span del DOM después de la medición
-                document.body.removeChild(span);
-            });
-        });
-    };
-
-    // Ajuste inicial
-    adjustWidth();
-
-    // Reajustar el tamaño al modificar el contenido
-    document.addEventListener("input", (e) => {
-        if (e.target.matches(".dynamic-width")) {
-            adjustWidth();
-        }
-    });
-});
-
-
-//------------------------ AJUSTAR ANCHOS DE INPUTS ---------------------------
-document.addEventListener("DOMContentLoaded", () => {
-    const ajustarAnchosInputs = () => {
-        const inputs = document.querySelectorAll(".input-dynamic-width");
-
-        inputs.forEach(input => {
-            // Crear el span para medición
-            const span = document.createElement("span");
-            span.style.visibility = "hidden";
-            span.style.whiteSpace = "nowrap";
-            span.style.position = "absolute";
-            span.style.font = getComputedStyle(input).font; // Asegúrate de que la fuente sea la misma
-            span.textContent = input.value || input.placeholder || ""; // Medir texto o placeholder
-
-            // Añadir el span al body para medir su ancho
-            document.body.appendChild(span);
-
-            // Forzar un redibujo y luego medir el ancho
-            requestAnimationFrame(() => {
-                const newWidth = span.offsetWidth + 10; // Añadir un margen de 10px
-
-                console.log(`Calculated width for INPUT: ${newWidth}px`); // Para depuración
-
-                // Establecer el ancho calculado sin restricciones
-                input.style.width = `${newWidth}px`;
-
-                // Eliminar el span del DOM después de la medición
-                document.body.removeChild(span);
-            });
-        });
-    };
-
-    // Ajuste inicial
-    ajustarAnchosInputs();
-
-    // Reajustar el tamaño al modificar el contenido
-    document.addEventListener("input", (e) => {
-        if (e.target.matches(".input-dynamic-width")) {
-            ajustarAnchosInputs();
-        }
-    });
-});
 
 
 
