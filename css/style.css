@@ -93,11 +93,6 @@ p {margin: 0}
     }
 }
 
-.formulario {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; 
-}
   
   select, input {
     margin: 0;
@@ -108,32 +103,19 @@ p {margin: 0}
   }
 
 
-
-  select {
-    width: auto; /* Permite al script controlar el ancho */
-    min-width: 5rem; /* Opcional: establece un ancho mínimo */
-  }
-
   @media print {
-    select, input {
+    select, input, option {
       border: none; /* Sin bordes en la impresión */
       background: none; /* Sin fondo en la impresión */
       box-shadow: none; /* Elimina cualquier sombra */
       color: inherit; /* Mantén el color del texto */
+      padding: 0;
+      margin: 0;
+      box-sizing: none;
     }
+
 }
 
-
-  .datos-generales input,
-  .datos-generales select{
-    width: 23rem;
-    display:inline-flex
-  }
-
-  .datos-generales label{
-    width: 9rem;
-    display:inline-flex
-  }
   
   textarea {
     width: 100%; /* Ocupa todo el ancho del contenedor */
@@ -153,8 +135,23 @@ p {margin: 0}
     display: inline;
   }
   
-  
-  
+
+  .formulario {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; 
+}
+
+.datos-generales input,
+.datos-generales select{
+  width: 23rem;
+  display:inline-flex
+}
+
+.datos-generales label{
+  width: 9rem;
+  display:inline-flex
+}
   
   
   

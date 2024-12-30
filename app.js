@@ -18,39 +18,32 @@ function iniciarSelectDinamico(selectId, inputDinamicoId, callback) {
     });
 }
 
-//------------------------ AJUSTAR ANCHOS DE SELECTS ---------------------------
+//------------------------------- ANCHO DE OPTIONS ------------------------------
 document.addEventListener("DOMContentLoaded", () => {
     const adjustWidth = () => {
         const elements = document.querySelectorAll(".dynamic-width");
 
         elements.forEach(el => {
-            // Crear el span para medición
+            // Crear el span para medir
             const span = document.createElement("span");
             span.style.visibility = "hidden";
             span.style.whiteSpace = "nowrap";
             span.style.position = "absolute";
-            span.style.font = getComputedStyle(el).font;  // Asegúrate de que la fuente sea la misma
+            span.style.font = getComputedStyle(el).font; // Fuente igual al elemento
 
             if (el.tagName === "SELECT") {
                 // Medir el texto de la opción seleccionada
-                const selectedOption = el.options[el.selectedIndex]; // Obtener la opción seleccionada
-                span.textContent = selectedOption ? selectedOption.text : ""; // Si hay opción seleccionada, tomar su texto
+                const selectedOption = el.options[el.selectedIndex];
+                span.textContent = selectedOption ? selectedOption.text : "";
             }
 
-            // Añadir el span al body para medir su ancho
+            // Añadir el span al body para calcular el ancho
             document.body.appendChild(span);
 
-            // Forzar un redibujo y luego medir el ancho
             requestAnimationFrame(() => {
-                const newWidth = span.offsetWidth + 10; // Añadir un margen de 10px
-
-                //console.log(`Calculated width for ${el.tagName}: ${newWidth}px`);  // Para depuración
-
-                // Establecer el ancho calculado sin restricciones
-                el.style.width = `${newWidth}px`;
-
-                // Eliminar el span del DOM después de la medición
-                document.body.removeChild(span);
+                const newWidth = span.offsetWidth; // Añadir margen de seguridad
+                el.style.width = `${newWidth}px`; // Aplicar ancho dinámico
+                document.body.removeChild(span); // Eliminar span del DOM
             });
         });
     };
@@ -64,7 +57,17 @@ document.addEventListener("DOMContentLoaded", () => {
             adjustWidth();
         }
     });
+
+    // Ajustar los anchos antes de imprimir
+    window.addEventListener("beforeprint", () => {
+        const elements = document.querySelectorAll(".dynamic-width");
+        elements.forEach(el => {
+            const computedWidth = el.style.width; // Recuperar el ancho calculado
+            el.style.setProperty("width", computedWidth, "important"); // Aplicarlo como inline-style
+        });
+    });
 });
+
 
 
 //------------------------ AJUSTAR ANCHOS DE INPUTS ---------------------------
@@ -86,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Forzar un redibujo y luego medir el ancho
             requestAnimationFrame(() => {
-                const newWidth = span.offsetWidth + 10; // Añadir un margen de 10px
+                const newWidth = span.offsetWidth + 1; // Añadir un margen de 10px
 
                 //console.log(`Calculated width for INPUT: ${newWidth}px`); // Para depuración
 
@@ -621,10 +624,6 @@ document.getElementById("sexo").addEventListener("change", function () {
         infoHembra.classList.remove("hidden")
     }
 });
-
-
-
-
 
 
 
