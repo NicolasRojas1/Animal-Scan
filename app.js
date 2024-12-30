@@ -58,14 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Ajustar los anchos antes de imprimir
-    window.addEventListener("beforeprint", () => {
-        const elements = document.querySelectorAll(".dynamic-width");
-        elements.forEach(el => {
-            const computedWidth = el.style.width; // Recuperar el ancho calculado
-            el.style.setProperty("width", computedWidth, "important"); // Aplicarlo como inline-style
-        });
-    });
+
 });
 
 
@@ -136,11 +129,12 @@ function agregarMaterialEnLuz(inputType, inputDinamico) {
 // Función específica para manejar la diferenciación de pared
 function agregarDiferenciacionPared(inputType, inputDinamico) {
     if (inputType === "opcion-1") {
-        const inputNumber = document.createElement("input");
-        inputNumber.type = "number";
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
 
         inputDinamico.innerHTML = "y apariencia hipoecogénica y engrosado con espesor de ";
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     }
 }
@@ -148,20 +142,21 @@ function agregarDiferenciacionPared(inputType, inputDinamico) {
 // Función para yeyuno diferenciacion de pared
 function agregarYeyunoPared(inputType, inputDinamico) {
     if (inputType === "opcion-1") {
-        const inputNumber = document.createElement("input");
-        inputNumber.type = "number";
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
 
         inputDinamico.innerHTML = " y apariencia hipoecogénica, engrosado con espesor de ";
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     }
 }
 
 // Función para yeyuno accidentes
 function agregarYeyunoAccidentes(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
-    inputDinamico.appendChild(inputNumber);
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     switch (inputType) {
 
@@ -193,44 +188,45 @@ function agregarYeyunoAccidentes(inputType, inputDinamico) {
 
 // Función para yeyuno accidentes
 function agregarYeyunoDilatacion(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     switch (inputType) {
 
         case "opcion-1":
             inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y dilatación hacia oral  y sin flujo en aboral, con dimensiones de  ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, ubicada en porción hipogástrica izquierda de yeyuno.";
             break;
 
         case "opcion-2":
             inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y dilatación  hacia oral y sin flujo en aboral, con dimensiones de  ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, ubicada en porción mesogástrica izquierda de yeyuno.";
             break;
 
         case "opcion-3":
             inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y  oral y sin flujo en aboral, con dimensiones de";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, ubicada en porción epigástrica izquierda de yeyuno.";
             break;
 
         case "opcion-4":
             inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y dilatación hacia oral y sin flujo en aboral, con dimensiones de  ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, ubicada en porción hipogástrica derecha de yeyuno.";
             break;
 
         case "opcion-5":
             inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y dilatación hacia oral y sin flujo en aboral, con dimensiones de  ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, ubicada en porción mesogástrica derecha de yeyuno.";
             break;
 
         case "opcion-6":
             inputDinamico.innerHTML = " generadora de sombra acústica fuerte, dentro de la luz ,que genera contraflujo y dilatación  hacia oral y sin flujo en aboral, con dimensiones de  ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, ubicada en porción epigástrica derecha de yeyuno.";
             break;
     }
@@ -238,54 +234,56 @@ function agregarYeyunoDilatacion(inputType, inputDinamico) {
 
 function agregarEstomagoDiferenciacion(inputType, inputDinamico) {
     if (inputType === "opcion-1") {
-        const inputNumber = document.createElement("input");
-        inputNumber.type = "number";
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
         inputDinamico.innerHTML = " y apariencia hipoecogénica, engrosado con espesor de ";
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     }
 }
 
 function agregarEstomagoCuerpo(inputType, inputDinamico) {
     if (inputType === "opcion-1") {
-        const inputNumber = document.createElement("input");
-        inputNumber.type = "number";
         const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
         inputText.type = "text";
         inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += "con dimensiones de ";
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm, generadora de sombra acústica fuerte.";
     }
 }
 
 function agregarDuodenoPared(inputType, inputDinamico) {
     if (inputType === "opcion-1") {
-        const inputNumber = document.createElement("input");
-        inputNumber.type = "number";
-        inputDinamico.appendChild(inputNumber);
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     }
 }
 
 function agregarDuodenoAccidente(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     switch (inputType) {
 
         case "opcion-1":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, con pérdida total de diferenciación entre capas y gas en la luz en porción hipogástrica.";
             break;
 
         case "opcion-2":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, con pérdida total de diferenciación entre capas y gas en la luz en porción mesogástrica.";
             break;
 
         case "opcion-3":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += "  cm, con pérdida total de diferenciación entre capas y gas en la luz en porción epigástrica.";
             break;
     }
