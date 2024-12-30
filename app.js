@@ -18,93 +18,8 @@ function iniciarSelectDinamico(selectId, inputDinamicoId, callback) {
     });
 }
 
-//------------------------------- ANCHO DE OPTIONS ------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-    const adjustWidth = () => {
-        const elements = document.querySelectorAll(".dynamic-width");
-
-        elements.forEach(el => {
-            // Crear el span para medir
-            const span = document.createElement("span");
-            span.style.visibility = "hidden";
-            span.style.whiteSpace = "nowrap";
-            span.style.position = "absolute";
-            span.style.font = getComputedStyle(el).font; // Fuente igual al elemento
-
-            if (el.tagName === "SELECT") {
-                // Medir el texto de la opción seleccionada
-                const selectedOption = el.options[el.selectedIndex];
-                span.textContent = selectedOption ? selectedOption.text : "";
-            }
-
-            // Añadir el span al body para calcular el ancho
-            document.body.appendChild(span);
-
-            requestAnimationFrame(() => {
-                const newWidth = span.offsetWidth; // Añadir margen de seguridad
-                el.style.width = `${newWidth}px`; // Aplicar ancho dinámico
-                document.body.removeChild(span); // Eliminar span del DOM
-            });
-        });
-    };
-
-    // Ajuste inicial
-    adjustWidth();
-
-    // Reajustar el tamaño al modificar el contenido
-    document.addEventListener("input", (e) => {
-        if (e.target.matches(".dynamic-width")) {
-            adjustWidth();
-        }
-    });
 
 
-});
-
-
-
-//------------------------ AJUSTAR ANCHOS DE INPUTS ---------------------------
-document.addEventListener("DOMContentLoaded", () => {
-    const ajustarAnchosInputs = () => {
-        const inputs = document.querySelectorAll(".input-dynamic-width");
-
-        inputs.forEach(input => {
-            // Crear el span para medición
-            const span = document.createElement("span");
-            span.style.visibility = "hidden";
-            span.style.whiteSpace = "nowrap";
-            span.style.position = "absolute";
-            span.style.font = getComputedStyle(input).font; // Asegúrate de que la fuente sea la misma
-            span.textContent = input.value || input.placeholder || ""; // Medir texto o placeholder
-
-            // Añadir el span al body para medir su ancho
-            document.body.appendChild(span);
-
-            // Forzar un redibujo y luego medir el ancho
-            requestAnimationFrame(() => {
-                const newWidth = span.offsetWidth + 1; // Añadir un margen de 10px
-
-                //console.log(`Calculated width for INPUT: ${newWidth}px`); // Para depuración
-
-                // Establecer el ancho calculado sin restricciones
-                input.style.width = `${newWidth}px`;
-
-                // Eliminar el span del DOM después de la medición
-                document.body.removeChild(span);
-            });
-        });
-    };
-
-    // Ajuste inicial
-    ajustarAnchosInputs();
-
-    // Reajustar el tamaño al modificar el contenido
-    document.addEventListener("input", (e) => {
-        if (e.target.matches(".input-dynamic-width")) {
-            ajustarAnchosInputs();
-        }
-    });
-});
 
 // Función específica para manejar el input dinámico
 function agregarMaterialEnLuz(inputType, inputDinamico) {
@@ -116,7 +31,7 @@ function agregarMaterialEnLuz(inputType, inputDinamico) {
         inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " estructuras hiperecogénicas redondeadas con dimensiones de ";
         inputDinamico.appendChild(inputText);
-        inputDinamico.innerHTML += " cm";
+        inputDinamico.innerHTML += " cm.";
 
     } else if (inputType === "opcion-2") {
         inputDinamico.appendChild(inputText);
@@ -290,9 +205,8 @@ function agregarDuodenoAccidente(inputType, inputDinamico) {
 }
 
 function agregarDuodenoDilatacion(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
     const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
     inputText.type = "text";
 
     switch (inputType) {
@@ -300,29 +214,30 @@ function agregarDuodenoDilatacion(inputType, inputDinamico) {
         case "opcion-1":
             inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += ", ubicada en porción hipogátrica con dimensiones de ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
 
         case "opcion-2":
             inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += ", ubicada en porción mesogástrica con dimensiones de ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
 
         case "opcion-3":
             inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += ", ubicada en porción epigátrica con dimensiones de ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
     }
 }
 
 function agregarPancrearLesion(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     if (inputType === "opcion-1" ||
         inputType === "opcion-2" ||
@@ -330,14 +245,15 @@ function agregarPancrearLesion(inputType, inputDinamico) {
         inputType === "opcion-4" ||
         inputType === "opcion-5" ||
         inputType === "opcion-6") {
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     }
 }
 
 function agregarRamaLesion(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     if (inputType === "opcion-1" ||
         inputType === "opcion-2" ||
@@ -345,14 +261,15 @@ function agregarRamaLesion(inputType, inputDinamico) {
         inputType === "opcion-4" ||
         inputType === "opcion-5" ||
         inputType === "opcion-6") {
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     }
 }
 
 function agregarBazoLesion(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     switch (inputType) {
 
@@ -363,7 +280,7 @@ function agregarBazoLesion(inputType, inputDinamico) {
         case "opcion-5":
         case "opcion-6":
             inputDinamico.innerHTML += "de bordes regulares y con dimensiones aproximadas de hasta ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
 
@@ -371,7 +288,7 @@ function agregarBazoLesion(inputType, inputDinamico) {
         case "opcion-8":
         case "opcion-9":
             inputDinamico.innerHTML += "y con dimensiones aproximadas de hasta ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, deformando el contorno del órgano, y  presentando leve señal Doppler.";
             break;
 
@@ -379,15 +296,16 @@ function agregarBazoLesion(inputType, inputDinamico) {
         case "opcion-11":
         case "opcion-12":
             inputDinamico.innerHTML += "de bordes regulares y con dimensiones aproximadas de hasta ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
     }
 }
 
 function agregarHigadoLesion(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     switch (inputType) {
 
@@ -403,13 +321,13 @@ function agregarHigadoLesion(inputType, inputDinamico) {
         case "opcion-10":
         case "opcion-11":
         case "opcion-12":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm y con leve señal doppler presente.";
             break;
 
         case "opcion-13":
         case "opcion-14":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
 
@@ -418,36 +336,40 @@ function agregarHigadoLesion(inputType, inputDinamico) {
 
 function agregarVesiculaPared(inputType, inputDinamico) {
     if (inputType === "opcion-1" || inputType === "opcion-2") {
-        const inputNumber = document.createElement("input");
-        inputNumber.type = "number";
-        inputDinamico.appendChild(inputNumber);
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm";
     }
 }
 
 function agregarRinonLesion(inputType, inputDinamico) {
     if (inputType === "opcion-1" || inputType === "opcion-2" || inputType === "opcion-3" || inputType === "opcion-4" || inputType === "opcion-5") {
-        const inputNumber = document.createElement("input");
-        inputNumber.type = "number";
-        inputDinamico.appendChild(inputNumber);
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     }
 }
 
 function agregarRinonMedula(inputType, inputDinamico) {
     if (inputType === "opcion-1" || inputType === "opcion-2" || inputType === "opcion-3" || inputType === "opcion-4") {
-        const inputNumber = document.createElement("input");
-        inputNumber.type = "number";
-        inputDinamico.appendChild(inputNumber);
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm";
     }
 }
 
 function agregarRinonPelvis(inputType, inputDinamico) {
     if (inputType === "opcion-1" || inputType === "opcion-2" || inputType === "opcion-3" || inputType === "opcion-4") {
-        const inputNumber = document.createElement("input");
-        inputNumber.type = "number";
-        inputDinamico.appendChild(inputNumber);
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm,";
     } else if (inputType === "opcion-5") {
         inputDinamico.innerHTML += " de pelvis renal con material anecogénicos particulado desplazando médula y corteza  hacia cápsula,"
@@ -455,51 +377,53 @@ function agregarRinonPelvis(inputType, inputDinamico) {
 }
 
 function agregarRinonUreter(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     switch (inputType) {
 
         case "opcion-1":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
 
         case "opcion-2":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm con presencia de material hiperecogénico  sedimentado.";
             break;
 
         case "opcion-3":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, con estructura  hiperecogénica, redondeada generadora de sombra acústica, con dimensiones de "
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
 
         case "opcion-4":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, con  estructura irregular hiperecogenica generadora de sombra acústica, con dimensiones de ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
     }
 }
 
 function agregarUteroMunon(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     switch (inputType) {
 
         case "opcion-1":
             inputDinamico.innerHTML += " y ecogénica heterogénea, grasa peritoneal reactiva rodeandola y con dimensiones de hasta ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
 
         case "opcion-2":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm, y contenido anecogénico particulado dentro de sí."
             break;
 
@@ -507,20 +431,21 @@ function agregarUteroMunon(inputType, inputDinamico) {
 }
 
 function agregarUteroLesion(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     switch (inputType) {
 
         case "opcion-1":
             inputDinamico.innerHTML += "con dimensiones de hasta ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm,";
             break;
 
         case "opcion-2":
             inputDinamico.innerHTML += "de hasta ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm,";
             break;
     }
@@ -528,43 +453,47 @@ function agregarUteroLesion(inputType, inputDinamico) {
 
 function agregarUteroMaterial(inputType, inputDinamico) {
     if (inputType === "opcion-1" || inputType === "opcion-2" || inputType === "opcion-3" || inputType === "opcion-4" || inputType === "opcion-5" || inputType === "opcion-6") {
-        const inputNumber = document.createElement("input");
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
         inputNumber.type = " con distensión de la luz de ";
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " y grosor de pared de ";
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     }
 }
 
 function agregarOvarioLesion(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     switch (inputType) {
 
         case "opcion-1":
             inputDinamico.innerHTML += " dentro del parénquima con dimensiones de hasta ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
 
         case "opcion-2":
             inputDinamico.innerHTML += " dentro del parénquima con dimensiones de ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
     }
 }
 
 function agregarProstataLesion(inputType, inputDinamico) {
-    const inputNumber = document.createElement("input");
-    inputNumber.type = "number";
+    const inputText = document.createElement("input");
+    inputText.classList.add("input-dynamic-width")
+    inputText.type = "text";
 
     switch (inputType) {
 
         case "opcion-1":
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
 
@@ -572,7 +501,7 @@ function agregarProstataLesion(inputType, inputDinamico) {
         case "opcion-3":
         case "opcion-4":
             inputDinamico.innerHTML += " distribuidas en todo el parénquima, con dimensiones de hasta ";
-            inputDinamico.appendChild(inputNumber);
+            inputDinamico.appendChild(inputText);
             inputDinamico.innerHTML += " cm.";
             break;
     }
@@ -580,26 +509,34 @@ function agregarProstataLesion(inputType, inputDinamico) {
 
 function agregarTesticuloLesion(inputType, inputDinamico) {
     if (inputType === "opcion-1" || inputType === "opcion-2" || inputType === "opcion-3" || inputType === "opcion-4") {
-        const inputNumber = document.createElement("input");
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
         inputDinamico.innerHTML += " con dimensiones de ";
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     } else if (inputType === "opcion-5" || inputType === "opcion-6") {
-        const inputNumber = document.createElement("input");
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
         inputDinamico.innerHTML += " con dimensiones de hasta ";
-        inputDinamico.appendChild(inputNumber);
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm.";
     }
 }
 
 function agregarEcotexturaGlandula(inputType, inputDinamico) {
     if (inputType === "opcion-1") {
-        const inputNumber = document.createElement("input");
-        inputDinamico.appendChild(inputNumber);
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm en polo craneal,";
     } else if (inputType === "opcion-2") {
-        const inputNumber = document.createElement("input");
-        inputDinamico.appendChild(inputNumber);
+        const inputText = document.createElement("input");
+        inputText.classList.add("input-dynamic-width")
+        inputText.type = "text";
+        inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " cm en polo caudal,";
     }
 }
@@ -624,7 +561,91 @@ document.getElementById("sexo").addEventListener("change", function () {
 });
 
 
+//------------------------------- ANCHO DE OPTIONS ------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const adjustWidth = () => {
+        const elements = document.querySelectorAll(".dynamic-width");
 
+        elements.forEach(el => {
+            // Crear el span para medir
+            const span = document.createElement("span");
+            span.style.visibility = "hidden";
+            span.style.whiteSpace = "nowrap";
+            span.style.position = "absolute";
+            span.style.font = getComputedStyle(el).font; // Fuente igual al elemento
+
+            if (el.tagName === "SELECT") {
+                // Medir el texto de la opción seleccionada
+                const selectedOption = el.options[el.selectedIndex];
+                span.textContent = selectedOption ? selectedOption.text : "";
+            }
+
+            // Añadir el span al body para calcular el ancho
+            document.body.appendChild(span);
+
+            requestAnimationFrame(() => {
+                const newWidth = span.offsetWidth; // Añadir margen de seguridad
+                el.style.width = `${newWidth}px`; // Aplicar ancho dinámico
+                document.body.removeChild(span); // Eliminar span del DOM
+            });
+        });
+    };
+
+    // Ajuste inicial
+    adjustWidth();
+
+    // Reajustar el tamaño al modificar el contenido
+    document.addEventListener("input", (e) => {
+        if (e.target.matches(".dynamic-width")) {
+            adjustWidth();
+        }
+    });
+
+});
+
+
+//------------------------ AJUSTAR ANCHOS DE INPUTS ---------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const ajustarAnchosInputs = () => {
+        const inputs = document.querySelectorAll(".input-dynamic-width");
+
+        inputs.forEach(input => {
+            // Crear el span para medición
+            const span = document.createElement("span");
+            span.style.visibility = "hidden";
+            span.style.whiteSpace = "nowrap";
+            span.style.position = "absolute";
+            span.style.font = getComputedStyle(input).font; // Asegúrate de que la fuente sea la misma
+            span.textContent = input.value || input.placeholder || ""; // Medir texto o placeholder
+
+            // Añadir el span al body para medir su ancho
+            document.body.appendChild(span);
+
+            // Forzar un redibujo y luego medir el ancho
+            requestAnimationFrame(() => {
+                const newWidth = span.offsetWidth + 1; // Añadir un margen de 10px
+
+                //console.log(`Calculated width for INPUT: ${newWidth}px`); // Para depuración
+
+                // Establecer el ancho calculado sin restricciones
+                input.style.width = `${newWidth}px`;
+
+                // Eliminar el span del DOM después de la medición
+                document.body.removeChild(span);
+            });
+        });
+    };
+
+    // Ajuste inicial
+    ajustarAnchosInputs();
+
+    // Reajustar el tamaño al modificar el contenido
+    document.addEventListener("input", (e) => {
+        if (e.target.matches(".input-dynamic-width")) {
+            ajustarAnchosInputs();
+        }
+    });
+});
 
 
 // Inicializar los selects con sus respectivas funciones específicas
@@ -662,3 +683,7 @@ iniciarSelectDinamico("testiculo-der-select-lesiones", "input-testiculo-der-lesi
 iniciarSelectDinamico("testiculo-izq-select-lesiones", "input-testiculo-izq-lesion", agregarTesticuloLesion);
 iniciarSelectDinamico("glandula-izq-select-ecotextura", "input-glandula-izq-ecotextura", agregarEcotexturaGlandula);
 iniciarSelectDinamico("glandula-der-select-ecotextura", "input-glandula-der-ecotextura", agregarEcotexturaGlandula);
+
+
+
+
