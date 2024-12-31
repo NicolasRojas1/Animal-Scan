@@ -1,165 +1,239 @@
 :root {
-    --fuenteHeading: 'PT Sans', sans-serif;
-    --fuenteParrafos: 'Open Sans', sans-serif;
+  --fuenteHeading: 'PT Sans', sans-serif;
+  --fuenteParrafos: 'Open Sans', sans-serif;
 
-    --primario: #784D3C;
-    --gris: #e1e1e1;
-    --blanco: #fff;
-    --negro: #000;
+  --primario: #784D3C;
+  --gris: #e1e1e1;
+  --blanco: #fff;
+  --negro: #000;
+  --titulo: #24433d;
 }
 
 html {
-    box-sizing: border-box;
-    font-size: 62.5%;
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
-*,*::before, *::after {
-    box-sizing: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
+
+
 
 body {
-    font-family: var(--fuenteParrafos);
-    font-size: 1.6rem;
-    line-height: 2;
+  font-family: var(--fuenteParrafos);
+  font-size: 1.4rem;
+  line-height: 2;
 }
 
-/* ------------- Globales ---------------*/ 
+/* ------------- Globales ---------------*/
 
 .contenedor {
-    max-width: 100rem;
-    width: 90%;
-    width: min(90%, 100rem);
-    margin: 0 auto;
+  max-width: 100rem;
+  width: 90%;
+  width: min(90%, 100rem);
+  margin: 0 auto;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-h1,h2,h3, h4 {
-    font-family: var(--fuenteHeading);
-    line-height: 1.2;
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fuenteHeading);
+  line-height: 1.2;
 }
 
-h1, h2, h3 {
-    text-align: center;
+h1,
+h2,
+h3 {
+  text-align: center;
 }
 
-h1 { font-size: 4.8rem;}
+h1 {
+  font-size: 4.8rem;
+}
 
-h2 { font-size: 4rem;}
+h2 {
+  font-size: 4rem;
+  margin-top: 0;
+  color: var(--titulo);
+}
 
-h3 { font-size: 3.2rem;}
+h3 {
+  font-size: 3.2rem;
+  margin: 2rem 0;
+}
 
-h4 { font-size: 2.8rem;}
+h4 {
+  font-size: 2.8rem;
+  margin: 1rem 0;
+}
 
-img {max-width: 100%;}
+p {
+  margin: 0
+}
 
-p {margin: 0}
+article {
+  margin-bottom: 4rem;
+}
 
 /*-------------- Utilidades ----------*/
-.hidden { display: none;}
-
-@media print {
-    .contenedor {
-        max-width: 800px;
-        min-height: 100vh;
-        font-size: 12px;
-        line-height: 1.5;
-        page-break-inside: avoid; /* Evita cortes dentro del contenedor */
-        /*page-break-before: always; /* Fuerza un salto de página antes del contenedor */
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        page-break-inside: avoid; /* Evita cortes dentro de las imágenes */
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        page-break-inside: avoid; /* Evita cortes dentro de las tablas */
-    }
-
-    /* Agregar un salto de página después de cada párrafo */
-    p {
-        page-break-after: avoid; 
-    }
-
-    /* Agregar un salto de página antes de cada sección */
-    .seccion {
-        page-break-before: always;
-    }
+.hidden {
+  display: none;
 }
 
-  
-  select, input {
-    margin: 0;
-    padding: 0;
-    background: none; /* Remueve el fondo por defecto */
-    /* border: none;   */
-    appearance: none; /* Estándar */ 
-  }
-
-
-  @media print {
-    select, input, option {
-      border: none; /* Sin bordes en la impresión */
-      background: none; /* Sin fondo en la impresión */
-      box-shadow: none; /* Elimina cualquier sombra */
-      color: inherit; /* Mantén el color del texto */
-      padding: 0;
-      margin: 0;
-      box-sizing: none;
-    }
-
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-  
-  textarea {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    max-width: 100%; /* Limita el ancho máximo */
-    min-height: 100px; /* Altura inicial */
-    padding: 10px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde suave */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
-    resize: both; /* Permite redimensionar */
-    outline: none; /* Elimina el borde azul al hacer clic */
-  }
+#logo {
+  width: 55%;
+}
 
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
-  .dynamic-width, .input-dinamico, p, div, select {
-    display: inline;
-  }
-  
-
-  .formulario {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; 
+.datos-generales {
+  display: flex;
+  margin: 0 1rem;
 }
 
 .datos-generales input,
-.datos-generales select{
-  width: 23rem;
-  display:inline-flex
+.datos-generales select {
+  width: 20rem;
+  display: inline-flex;
+  border: none;
+  font-weight: 400;
 }
 
-.datos-generales label{
-  width: 9rem;
-  display:inline-flex
+.datos-generales label {
+  width: 8rem;
+  font-weight: bold;
 }
+
+@media print {
+  .contenedor {
+    max-width: 800px;
+    min-height: 100vh;
+    line-height: 1.5;
+    page-break-inside: avoid;
+    /* Evita cortes dentro del contenedor */
+    /*page-break-before: always; /* Fuerza un salto de página antes del contenedor */
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    page-break-inside: avoid;
+    /* Evita cortes dentro de las imágenes */
+  }
+
+  /* Agregar un salto de página después de cada párrafo */
+  p {
+    page-break-after: avoid;
+  }
+
+  /* Agregar un salto de página antes de cada sección */
+  .seccion {
+    page-break-before: always !important;
+  }
   
+}
+
+.seccion {
+  page-break-before: always;
+}
+
+select,
+input {
+  margin: 0;
+  padding: 0;
+  background: none;
+  /* Remueve el fondo por defecto */
+  appearance: none;
+  /* Estándar */
+  /*font-weight: bold;*/
+}
+
+@media print {
+
+  select,
+  input,
+  option {
+    border: none;
+    /* Sin bordes en la impresión */
+    background: none;
+    /* Sin fondo en la impresión */
+    box-shadow: none;
+    /* Elimina cualquier sombra */
+    color: inherit;
+    /* Mantén el color del texto */
+    padding: 0;
+    margin: 0;
+    box-sizing: none;
+  }
+}
+
+.seccion {
+  page-break-before: always;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  /* Espaciado interno */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  resize: both;
+  /* Permite redimensionar */
+  outline: none;
+  /* Elimina el borde azul al hacer clic */
+}
+
+.dynamic-width,
+.input-dinamico,
+p,
+div,
+select {
+  display: inline;
+}
 
 
-  
-  
-  
+
+@media print {
   
 
+  /* Marca de agua en todas las páginas */
+  @page {
+    size: auto; /* Ajusta el tamaño de la página según el contenido */
+  }
 
+  .watermark-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado y rotación de la imagen */
+    width: 70%; /* Ajusta el tamaño de la imagen */
+    opacity: 0.1; /* Ajusta la opacidad para hacerlo semitransparente */
+    pointer-events: none; /* Asegura que no interfiera con el contenido */
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+    pointer-events: none;
+    /* Asegúrate de que la marca de agua se repita en cada página */
+  }
+}
 
 

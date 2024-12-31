@@ -14,7 +14,7 @@
 
 <body class="contenedor">
     <header>
-        <h1>Animal Scan</h1>
+        <img id="logo" src="/img/animal-scan-logo-sin-fondo.png" alt="logo-clinica">
     </header>
 
     <main>
@@ -475,7 +475,7 @@
                 </p>
             </article>
 
-            <article class="seccion">
+            <article>
                 <h4>Bazo</h4>
                 <p>Órgano
                     <select class="dynamic-width">
@@ -539,9 +539,8 @@
             </article>
         </div>
 
-        <div>
+        <div class="seccion">
             <h3>Hepatobiliar</h3>
-
             <article>
                 <h4>Hígado</h4>
                 <p>Tamaño
@@ -557,34 +556,20 @@
                     <select id="higado-select-lesiones" class="dynamic-width">
                         <option selected>sin lesiones focales o multifocales.</option>
                         <!-- OPTIONS E INPUTS COMPLETOS -->
-                        <option value="1" data-input-type="opcion-1">con una lesión redondeada, de apariencia homogénea,
-                            hipoecogénica en lóbulo izquierdo, con dimensiones de</option>
-                        <option value="2" data-input-type="opcion-2">con una lesión redondeada, de apariencia
-                            heterogénea, hipoecogénica en lóbulo izquierdo, con dimensiones de</option>
-                        <option value="3" data-input-type="opcion-3">con una lesión redondeada, de apariencia
-                            homogénea,hipoecogénica en lóbulo izquierdo, con dimensiones de</option>
-                        <option value="4" data-input-type="opcion-4">con una lesión irregular, de apariencia homogénea,
-                            hipoecogénica en lóbulo izquierdo, con dimensiones de</option>
-                        <option value="5" data-input-type="opcion-5">con una lesión redondeada, de apariencia homogénea,
-                            hiperecogénica en lóbulo izquierdo, con dimensiones de</option>
-                        <option value="6" data-input-type="opcion-6">con una lesión irregular, de apariencia
-                            heterogénea, hipoecogénica en lóbulo medial izquierdo, con dimensiones de</option>
-                        <option value="7" data-input-type="opcion-7">con una lesión redondeada, de apariencia homogénea,
-                            hipoecogénica en lóbulo derecho, con dimensiones de</option>
-                        <option value="8" data-input-type="opcion-8">con una lesión redondeada, de apariencia
-                            heterogénea, hipoecogénica en lóbulo derecho, con dimensiones de</option>
-                        <option value="9" data-input-type="opcion-9">con una lesión redondeada, de apariencia homogénea,
-                            hipoecogénica en lóbulo, con dimensiones de</option>
-                        <option value="10" data-input-type="opcion-10">con una lesión irregular , de apariencia
-                            homogénea, hipoecogénica en lóbulo derecho, con dimensiones de</option>
-                        <option value="11" data-input-type="opcion-11">con una lesión redondeada, de apariencia
-                            homogénea, hiperecogénica en lóbulo derecho, con dimensiones de</option>
-                        <option value="12" data-input-type="opcion-12">con una lesión irregular, de apariencia
-                            heterogénea, hipoecogénica en lóbulo derecho, con dimensiones de</option>
-                        <option value="13" data-input-type="opcion-13">con múltiples lesiones redondeadas hipoecogénicas
-                            diseminados por todo el parénquima con dimensiones de hasta</option>
-                        <option value="14" data-input-type="opcion-14">con múltiples lesiones irregulares hipoecogénicas
-                            diseminados por todo el parénquima con dimensiones de hasta</option>
+                        <option value="1" data-input-type="opcion-1">con una lesión redondeada, de apariencia homogénea, hipoecogénica en lóbulo izquierdo, con dimensiones de</option>
+                        <option value="2" data-input-type="opcion-2">con una lesión redondeada, de apariencia heterogénea, hipoecogénica en lóbulo izquierdo, con dimensiones de</option>
+                        <option value="3" data-input-type="opcion-3">con una lesión redondeada, de apariencia homogénea,hipoecogénica en lóbulo izquierdo, con dimensiones de</option>
+                        <option value="4" data-input-type="opcion-4">con una lesión irregular, de apariencia homogénea, hipoecogénica en lóbulo izquierdo, con dimensiones de</option>
+                        <option value="5" data-input-type="opcion-5">con una lesión redondeada, de apariencia homogénea, hiperecogénica en lóbulo izquierdo, con dimensiones de</option>
+                        <option value="6" data-input-type="opcion-6">con una lesión irregular, de apariencia heterogénea, hipoecogénica en lóbulo medial izquierdo, con dimensiones de</option>
+                        <option value="7" data-input-type="opcion-7">con una lesión redondeada, de apariencia homogénea, hipoecogénica en lóbulo derecho, con dimensiones de</option>
+                        <option value="8" data-input-type="opcion-8">con una lesión redondeada, de apariencia heterogénea, hipoecogénica en lóbulo derecho, con dimensiones de</option>
+                        <option value="9" data-input-type="opcion-9">con una lesión redondeada, de apariencia homogénea, hipoecogénica en lóbulo, con dimensiones de</option>
+                        <option value="10" data-input-type="opcion-10">con una lesión irregular , de apariencia homogénea, hipoecogénica en lóbulo derecho, con dimensiones de</option>
+                        <option value="11" data-input-type="opcion-11">con una lesión redondeada, de apariencia homogénea, hiperecogénica en lóbulo derecho, con dimensiones de</option>
+                        <option value="12" data-input-type="opcion-12">con una lesión irregular, de apariencia heterogénea, hipoecogénica en lóbulo derecho, con dimensiones de</option>
+                        <option value="13" data-input-type="opcion-13">con múltiples lesiones redondeadas hipoecogénicas diseminados por todo el parénquima con dimensiones de hasta</option>
+                        <option value="14" data-input-type="opcion-14">con múltiples lesiones irregulares hipoecogénicas diseminados por todo el parénquima con dimensiones de hasta</option>
                     </select>
                 <div id="input-higado-lesion"></div>
                 <select class="dynamic-width">
@@ -798,7 +783,7 @@
                 </p>
             </article>
 
-            <article class="seccion">
+            <article>
                 <h4>Riñon Derecho</h4>
                 <p>Órgano de forma
                     <select class="dynamic-width">
@@ -907,7 +892,7 @@
             </article>
         </div>
 
-        <div>
+        <div class="seccion">
             <h3>Reproductivo</h3>
             <div id="informacion-hembra">
 
@@ -991,7 +976,7 @@
                     </p>
                 </article>
 
-                <article>
+                <article class="seccion">
                     <h4>Ovario Derecho</h4>
                     <p>
                         <select class="dynamic-width">
@@ -1103,7 +1088,7 @@
                     </p>
                 </article>
 
-                <article>
+                <article class="seccion">
                     <h4>Testiculo Izquierdo</h4>
                     <p>
                         <select class="dynamic-width">
@@ -1265,9 +1250,7 @@
         <p>TP 47440</p>
     </div>
 
-
-
-
+    <img src="/img/marca-agua-sin-fondo.png" alt="Marca de agua" class="watermark-image">
     <script src="/app.js"></script>
 
 
