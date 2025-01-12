@@ -7,14 +7,13 @@
     <title>Animal Scan</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="contenedor">
     <header>
-        <img id="logo" src="/img/animal-scan-logo-sin-fondo.png" alt="logo-clinica">
+        <img id="logo" src="img/animal-scan-logo-sin-fondo.png" alt="logo-clinica">
     </header>
 
     <main>
@@ -30,7 +29,11 @@
                 <input type="text" placeholder="Ingrese el nombre" id="nombre">
 
                 <label for="especie">Especie:</label>
-                <input type="text" placeholder="Ingrese la especie" id="especie">
+                <select id="especieo">
+                    <option>--- Selecciona ---</option>
+                    <option value="canino">Canino</option>
+                    <option value="felino">Felino</option>
+                </select>
             </div>
 
             <div class="datos-generales">
@@ -44,7 +47,7 @@
             <div class="datos-generales">
                 <label for="sexo">Sexo:</label>
                 <select id="sexo">
-                    <option selected> --- Selecciona --</option>
+                    <option>--- Selecciona ---</option>
                     <option value="macho">Macho</option>
                     <option value="hembra">Hembra</option>
                 </select>
@@ -56,7 +59,14 @@
             <div class="datos-generales">
                 <label for="propietario">Propietario:</label>
                 <input type="text" placeholder="Nombre del propietario" id="propietario">
-            </div>
+
+                <label for="estado-reproductivo">Estado:</label>
+                <select id="estado-reproductivo">
+                    <option>--- Selecciona ---</option>
+                    <option value="esterilizado">Esterilizado</option>
+                    <option value="entero">Entero</option>
+                </select>
+            </div>    
 
         </fieldset>
     </form>
@@ -229,7 +239,7 @@
                 </p>
             </article>
 
-            <article class="seccion">
+            <article>
                 <h4>Estómago</h4>
                 <p>Órgano
                     <select class="dynamic-width">
@@ -346,7 +356,7 @@
                 </p>
             </article>
 
-            <article>
+            <article class="seccion">
                 <h4>Páncreas</h4>
                 <p>Cuerpo en posición anátomica conservada, espesor
                     <select class="dynamic-width">
@@ -539,7 +549,7 @@
             </article>
         </div>
 
-        <div class="seccion">
+        <div>
             <h3>Hepatobiliar</h3>
             <article>
                 <h4>Hígado</h4>
@@ -892,7 +902,7 @@
             </article>
         </div>
 
-        <div class="seccion">
+        <div>
             <h3>Reproductivo</h3>
             <div id="informacion-hembra">
 
@@ -976,7 +986,7 @@
                     </p>
                 </article>
 
-                <article class="seccion">
+                <article>
                     <h4>Ovario Derecho</h4>
                     <p>
                         <select class="dynamic-width">
@@ -1088,7 +1098,7 @@
                     </p>
                 </article>
 
-                <article class="seccion">
+                <article>
                     <h4>Testiculo Izquierdo</h4>
                     <p>
                         <select class="dynamic-width">
@@ -1134,7 +1144,7 @@
                 </article>
             </div>
 
-            <div class="seccion">
+            <div>
                 <h3>Glándulas Adrenales</h3>
 
                 <article>
@@ -1250,8 +1260,8 @@
         <p>TP 47440</p>
     </div>
 
-    <img src="/img/marca-agua-sin-fondo.png" alt="Marca de agua" class="watermark-image">
-    <script src="/app.js"></script>
+    <img src="img/marca-agua-sin-fondo.png" alt="Marca de agua" class="watermark-image">
+    <script src="app.js"></script>
 
 
 
