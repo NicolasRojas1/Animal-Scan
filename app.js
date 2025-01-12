@@ -27,7 +27,7 @@ function agregarMaterialEnLuz(inputType, inputDinamico) {
     inputText.classList.add("input-dynamic-width")
     inputText.type = "text";
 
-    if (inputType === "opcion-1") {  
+    if (inputType === "opcion-1") {
         inputDinamico.appendChild(inputText);
         inputDinamico.innerHTML += " estructuras hiperecogénicas redondeadas con dimensiones de ";
         inputDinamico.appendChild(inputText);
@@ -560,6 +560,29 @@ document.getElementById("sexo").addEventListener("change", function () {
     }
 });
 
+// -------------------- FUNCION DISPLAY FELINO  ---------------------
+document.getElementById("especie").addEventListener("change", function () {
+    const value = this.value;
+
+    // Manejar la visibilidad de la sección Vascular
+    const seccionVascular = document.getElementById("vascular");
+    if (value === "felino") {
+        seccionVascular.classList.add("hidden");
+    } else {
+        seccionVascular.classList.remove("hidden");
+    }
+
+    // Manejar la visibilidad de los elementos con la clase .indice-aorto
+    const seccionAorto = document.querySelectorAll(".indice-aorto");
+    seccionAorto.forEach(function(element) {
+        if (value === "felino") {
+            element.classList.add("hidden");
+        } else {
+            element.classList.remove("hidden");
+        }
+    });
+});
+
 
 //------------------------------- ANCHO DE OPTIONS ------------------------------
 document.addEventListener("DOMContentLoaded", () => {
@@ -603,7 +626,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
 //------------------------ AJUSTAR ANCHOS DE INPUTS ---------------------------
 document.addEventListener("DOMContentLoaded", () => {
     const ajustarAnchosInputs = () => {
@@ -623,7 +645,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Forzar un redibujo y luego medir el ancho
             requestAnimationFrame(() => {
-                const newWidth = span.offsetWidth + 1; // Añadir un margen de 10px
+                const newWidth = span.offsetWidth + 1; // Añadir un margen de 1px
 
                 //console.log(`Calculated width for INPUT: ${newWidth}px`); // Para depuración
 
