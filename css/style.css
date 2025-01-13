@@ -25,7 +25,7 @@ html {
 
 body {
   font-family: var(--fuenteArial);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 2;
 }
 
@@ -69,6 +69,7 @@ h2 {
 h3 {
   font-size: 1.8rem;
   margin: 2rem 0;
+  text-align: justify;
 }
 
 h4 {
@@ -81,7 +82,7 @@ p {
 }
 
 article {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .bold {
@@ -146,13 +147,12 @@ header {
   }
 
   /* Agregar un salto de página después de cada párrafo */
-  p {
+  h4,p {
     page-break-after: avoid;
   }
 
-  /* Agregar un salto de página antes de cada sección */
-  .seccion {
-    page-break-before: always !important;
+  article {
+    page-break-inside: avoid;
   }
   
 }
