@@ -560,6 +560,21 @@ document.getElementById("sexo").addEventListener("change", function () {
     }
 });
 
+// --------------------- FUNCIÓN ESTERILIZADO ----------------------
+document.getElementById("estado-reproductivo").addEventListener("change", function () {
+    const value = this.value; // Obtener el valor seleccionado
+    const esterilizados = document.querySelectorAll(".esterilizado"); // Seleccionar todos los elementos con la clase 'esterilizado'
+
+    esterilizados.forEach(elemento => {
+        if (value === "esterilizado") {
+            elemento.classList.add("hidden"); // Aplicar clase 'hidden' a cada elemento
+        } else {
+            elemento.classList.remove("hidden"); // Quitar clase 'hidden' si no es 'esterilizado'
+        }
+    });
+});
+
+
 // -------------------- FUNCION DISPLAY FELINO  ---------------------
 document.getElementById("especie").addEventListener("change", function () {
     const value = this.value;
